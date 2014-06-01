@@ -24,8 +24,8 @@ public partial class Login : System.Web.UI.Page
 
         #region connection
         SqlDataReader reader;
-        string connectionstring = @"Data Source=(LocalDB)\v11.0;" +
-            @"AttachDbFilename=~//App_Data//OnlineTraining.mdf;
+       string connectionstring = @"Data Source=(LocalDB)\v11.0;" +
+            @"AttachDbFilename=|DataDirectory|\OnlineTraining.mdf;
                 Integrated Security=True;
                 Connect Timeout=30;";
         SqlConnection connection = new SqlConnection(connectionstring);
