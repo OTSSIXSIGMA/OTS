@@ -24,10 +24,7 @@ public partial class Login : System.Web.UI.Page
 
         #region connection
         SqlDataReader reader;
-       string connectionstring = @"Data Source=(LocalDB)\v11.0;" +
-            @"AttachDbFilename=|DataDirectory|\OnlineTraining.mdf;
-                Integrated Security=True;
-                Connect Timeout=30;";
+       string connectionstring = "Server=55eb3ba5-c93f-4d5d-a746-a33d0187f51c.sqlserver.sequelizer.com;Database=db55eb3ba5c93f4d5da746a33d0187f51c;User ID=decjkfdwyfdldmsg;Password=joja5KVaS7pvgVztqJtWcVkv2Y2YyYpuUbbExi4FxeLA6UVjVXkFi5mvdVgfR5H2;";
         SqlConnection connection = new SqlConnection(connectionstring);
         #endregion
 
