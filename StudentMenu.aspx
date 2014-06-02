@@ -20,8 +20,8 @@
     top: 30%;
     left: 33%;
     margin-top: -54px;
-    margin-left: 50px;
-    width: 295px;
+    margin-left: 22px;
+    width: 390px;
     height: 100px;
 }
 </style>
