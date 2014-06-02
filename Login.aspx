@@ -18,11 +18,11 @@
 
 #HeadingCenter {
     position: absolute;
-    top: 30%;
-    left: 33%;
-    margin-top: -54px;
-    margin-left: 50px;
-    width: 295px;
+    top: 15%;
+    left: 29%;
+    margin-top: -50px;
+    margin-left: 68px;
+    width: 336px;
     height: 100px;
 }
 </style>
