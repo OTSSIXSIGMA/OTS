@@ -22,6 +22,8 @@
   <form id="form1" runat="server">
     <div id="divCenter">
     <h3>
+      Welcome to Online Training System</h3>
+    <h3>
       Login Page</h3>
     <table>
       <tr>
