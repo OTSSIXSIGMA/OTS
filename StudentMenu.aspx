@@ -15,11 +15,25 @@
     width: 100px;
     height: 100px;
 }
+#HeadingCenter {
+    position: absolute;
+    top: 30%;
+    left: 33%;
+    margin-top: -54px;
+    margin-left: 50px;
+    width: 295px;
+    height: 100px;
+}
 </style>
  
 </head>
 <body>
     <form id="form1" runat="server">
+    <div id="HeadingCenter">
+    <h3>
+      Welcome. Click on "Start Test" to take the test</h3>
+    <h3>
+    </div>
     <div id="divCenter">
     <asp:Button ID="btnStartTest" runat="server" Text="Start Test" OnClick="btnStartTest_Click"></asp:Button>
         <asp:Button ID="btnContinue" runat="server" Text="Continue Test" OnClick="btnContinue_Click" Visible="false" />
