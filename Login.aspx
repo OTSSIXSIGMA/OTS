@@ -19,10 +19,10 @@
 #HeadingCenter {
     position: absolute;
     top: 15%;
-    left: 29%;
+    left: 24%;
     margin-top: -50px;
     margin-left: 68px;
-    width: 371px;
+    width: 447px;
     height: 100px;
 }
 </style>
