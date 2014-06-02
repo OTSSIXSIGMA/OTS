@@ -34,7 +34,7 @@ public partial class TestQuestion : System.Web.UI.Page
                 {
                     if (((List<Question>)(Session["Questions"])).Exists(q => q.SelectedList != null))
                     {
-                        lblError.Text = "Your previous session has been retrieved. ";
+                        
                         QuestionID = ((List<Question>)(Session["Questions"])).FindLast(q => q.SelectedList != null).ID;
                     }
                     else
