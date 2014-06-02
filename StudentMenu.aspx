@@ -31,7 +31,7 @@
     <form id="form1" runat="server">
     <div id="HeadingCenter">
     <h3>
-      Click on "Start Test" to take the test
+      Click on "Start Test" to take the test 
     </h3> 
     </div>  
     <div id="divCenter">
