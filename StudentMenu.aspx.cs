@@ -19,6 +19,7 @@ public partial class Menu : System.Web.UI.Page
     }
     protected void btnStartTest_Click(object sender, EventArgs e)
     {
+       bool isOld = false;
         Session["SessionID"] = Guid.NewGuid().ToString();
         if (Session["Questions"] != null)
         {
@@ -26,11 +27,15 @@ public partial class Menu : System.Web.UI.Page
             {
                 question.SelectedList = null;
             }
+            isOld = true;
         }
         Session["Options"] = GetOptions();
         Session["Questions"] = GetQuestions();
         Session["ResultList"] = null;
-        CheckOpenSession();
+        if (!isOld)
+        {
+            CheckOpenSession();
+        }
 
         Response.Redirect("TestQuestion.aspx");
 
