@@ -20,7 +20,7 @@
     top: 30%;
     left: 33%;
     margin-top: -54px;
-    margin-left: 62px;
+    margin-left: 65px;
     width: 390px;
     height: 100px;
 }
