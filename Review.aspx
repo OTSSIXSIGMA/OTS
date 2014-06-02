@@ -12,16 +12,28 @@
     <script type="text/javascript">
         Shadowbox.init();
     </script>
+    <style type="text/css">
+    #divCenter {
+	position: absolute;
+    top: 45%;
+    left: 40%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+}
+</style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div id="divCenter" align="center">
         <asp:Label ID="LblResult" runat="server" Text=""></asp:Label>
         <div>
         <asp:Button ID="btnContinue" runat="server" Text="Continue" OnClick="btnContinue_Click" />
         </div>
         <div>
-        <a href="Reporting.aspx" rel="shadowbox;height=500;width=500"> Report </a>
+        <a href="Reporting.aspx" rel="shadowbox;height=500;width=500"> Check Status </a>
+        <asp:Button ID="btnPrint" runat="server" Text="Print"/>
         </div>
         </div>
     </form>
