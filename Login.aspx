@@ -22,7 +22,7 @@
     left: 29%;
     margin-top: -50px;
     margin-left: 68px;
-    width: 336px;
+    width: 371px;
     height: 100px;
 }
 </style>
@@ -30,7 +30,7 @@
 </head>
 <body>
   <form id="form1" runat="server">
-    <div id="HeadingCenter" style="color:#0000FF; font-size: 12pt;font-family: tims, cursive, serif;font-weight: bold">
+    <div id="HeadingCenter" style="color:#0000FF; font-size: 16pt;font-family: tims, cursive, serif;font-weight: bold">
     <h3>
       Welcome to Online Training System</h3>
     <h3>
