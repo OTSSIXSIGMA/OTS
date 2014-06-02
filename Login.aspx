@@ -73,7 +73,7 @@
           <asp:CheckBox ID="Persist" runat="server" /></td>
       </tr>
     </table>
-    <asp:Button ID="Submit1" OnClick="Logon_Click" Text="Log On" 
+    <asp:Button ID="Submit1" OnClick="Logon_Click" Text="Log In" 
        runat="server" />
     <p>
       <asp:Label ID="Msg" ForeColor="red" runat="server" />
