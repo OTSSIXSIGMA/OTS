@@ -33,6 +33,7 @@
         </div>
         <div>
         <a href="Reporting.aspx" rel="shadowbox;height=500;width=500"> Check Status </a>
+        <br />
         <asp:Button ID="btnPrint" runat="server" Text="Print"/>
         </div>
         </div>
