@@ -32,7 +32,6 @@
     <div id="HeadingCenter">
     <h3>
       Welcome. Click on "Start Test" to take the test</h3>
-    <h3>
     </div>
     <div id="divCenter">
     <asp:Button ID="btnStartTest" runat="server" Text="Start Test" OnClick="btnStartTest_Click"></asp:Button>
