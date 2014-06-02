@@ -15,15 +15,28 @@
     width: 100px;
     height: 100px;
 }
+
+#HeadingCenter {
+    position: absolute;
+    top: 30%;
+    left: 33%;
+    margin-top: -54px;
+    margin-left: -29px;
+    width: 295px;
+    height: 100px;
+}
 </style>
     
 </head>
 <body>
   <form id="form1" runat="server">
-    <div id="divCenter">
+    <div id="HeadingCenter">
     <h3>
       Welcome to Online Training System</h3>
     <h3>
+    </div>
+    <div id="divCenter">
+      <h3>
       Login Page</h3>
     <table>
       <tr>
