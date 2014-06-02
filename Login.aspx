@@ -21,7 +21,7 @@
     top: 30%;
     left: 33%;
     margin-top: -54px;
-    margin-left: -29px;
+    margin-left: 40px;
     width: 295px;
     height: 100px;
 }
