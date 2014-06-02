@@ -10,6 +10,15 @@ public partial class Reporting : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        try
+        {
+            if ((Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("review.aspx")))
+            {
+                btnReturn.Visible = false;
+            }
+        }
+        catch (Exception ex)
+        { }
         List<OnlineTrainingBL.Report> report = new List<OnlineTrainingBL.Report>();
         foreach (Question question in ((List<Question>)Session["Questions"]))
         {
@@ -18,7 +27,7 @@ public partial class Reporting : System.Web.UI.Page
                List<String> OptionsOrder = new List<String>(question.SelectedList.Split(','));
                string OptionChosen = question.OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).Value;
                string OptionCorrect = question.OptionList.Find(q => q.isAnswer == true).Value;
-               Report tmpReport = new Report(question.Value, OptionChosen, OptionCorrect);
+                Report tmpReport = new Report(question.Value, OptionChosen, OptionCorrect, (OptionChosen==OptionCorrect)?"Correct":"Wrong");
                report.Add(tmpReport);
             }
         }
@@ -31,4 +40,9 @@ public partial class Reporting : System.Web.UI.Page
         else { lblReport.Text = "No report found."; }
     }
 
+    protected void btnReturn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("StudentMenu.aspx");
+    }
 }
+

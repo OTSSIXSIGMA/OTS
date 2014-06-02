@@ -21,8 +21,12 @@
             <asp:BoundField DataField="Answer" HeaderText="Answer">
                <ItemStyle HorizontalAlign="Center" />
                </asp:BoundField>
+            <asp:BoundField DataField="Result" HeaderText="Result">
+               <ItemStyle HorizontalAlign="Center" />
+               </asp:BoundField>
                 </Columns>
         </asp:GridView>
+        <asp:Button ID="btnReturn" runat="server" Text="Return to main menu" OnClick="btnReturn_Click" />
         
     </div>
     </form>
