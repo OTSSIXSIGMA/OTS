@@ -31,8 +31,7 @@
     <form id="form1" runat="server">
     <div id="HeadingCenter">
     <h3>
-      Welcome. Click on "Start Test" to take the test</h3>
-    </div>
+      Welcome. Click on "Start Test" to take the test</h3> 
     <div id="divCenter">
     <asp:Button ID="btnStartTest" runat="server" Text="Start Test" OnClick="btnStartTest_Click"></asp:Button>
         <asp:Button ID="btnContinue" runat="server" Text="Continue Test" OnClick="btnContinue_Click" Visible="false" />
