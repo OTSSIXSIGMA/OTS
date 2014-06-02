@@ -7,7 +7,7 @@
   <title>Login Page</title>
 <style type="text/css">
 #divCenter {
-	position: absolute;
+    position: absolute;
     top: 45%;
     left: 40%;
     margin-top: -50px;
@@ -30,7 +30,7 @@
 </head>
 <body>
   <form id="form1" runat="server">
-    <div id="HeadingCenter">
+    <div id="HeadingCenter" style="color:#0000FF; font-size: 12pt;font-family: tims, cursive, serif;font-weight: bold">
     <h3>
       Welcome to Online Training System</h3>
     <h3>
