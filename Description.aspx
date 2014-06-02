@@ -8,7 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div align="center">
         <asp:Label ID ="lblDescription" runat ="server"/>
         <%--<asp:Button ID="btnReturn" runat="server" Text="Return to Question" OnClick="btnReturn_Click" />--%>
     </div>
