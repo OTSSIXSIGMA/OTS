@@ -19,14 +19,14 @@
     left: 40%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 100px;
+    width: 330px;
     height: 100px;
 }
 </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="divCenter" align="center">
+    <div id="divCenter" align="center" style="font-size: 12pt;font-family: tims, cursive, serif;font-weight: bold">
         <asp:Label ID="LblResult" runat="server" Text=""></asp:Label>
         <div>
         <asp:Button ID="btnContinue" runat="server" Text="Continue" OnClick="btnContinue_Click" />
