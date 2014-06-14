@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"/>
@@ -18,8 +18,8 @@
 
 #HeadingCenter {
     position: absolute;
-    top: 15%;
-    left: 24%;
+    top: 25%;
+    left: 30%;
     margin-top: -50px;
     margin-left: 68px;
     width: 447px;
@@ -31,9 +31,8 @@
 <body>
   <form id="form1" runat="server">
     <div id="HeadingCenter" style="color:#0000FF; font-size: 16pt;font-family: tims, cursive, serif;font-weight: bold">
-    <h3>
-      Welcome to Online Training System</h3>
-    <h3>
+    <h3>Welcome to Online Training System</h3>
+
     </div>
     <div id="divCenter">
       <h3>

@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Test Question</title>
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+
     <style type="text/css">
 #divCenter {
 	position: absolute;
@@ -52,9 +53,8 @@
         <asp:Button ID ="btnPrevious" runat ="server" Text="Previous" OnClick="btnPrevious_Click"/>
         <asp:Button ID="btnSubmit" runat="server" Text="Next" OnClick="btnSubmit_Click" ValidationGroup="options"  CausesValidation="true" />
         <asp:Button ID="btnMenu" runat="server" Text="Return to main menu" OnClick="btnMenu_Click" />
-        <br />
-        <br />
         <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+
     </div>
     </form>
 </body>

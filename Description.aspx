@@ -5,21 +5,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+         <script type="text/javascript">
+             function PrintPage() {
+                 window.print();
+             }
+</script>
     <style type="text/css">
-
-#HeadingCenter {
+#divCenter {
     position: absolute;
-    top: 30%;
-    left: 33%;
-    margin-top: -54px;
-    margin-left: 50px;
-    }
+    top: 35%;
+    left: 30%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 400px;
+    height: 100px;
+}
 </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div align="center" id="HeadingCenter">
+    <div id="divCenter">
         <asp:Label ID ="lblDescription" runat ="server"/>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+         <asp:Button ID="btnPrint" runat="server" Text="Print" OnClientClick="javascript:PrintPage();" />
         <%--<asp:Button ID="btnReturn" runat="server" Text="Return to Question" OnClick="btnReturn_Click" />--%>
     </div>
     </form>

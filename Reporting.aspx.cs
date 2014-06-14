@@ -25,9 +25,9 @@ public partial class Reporting : System.Web.UI.Page
             if(!string.IsNullOrEmpty( question.SelectedList))
             {
                List<String> OptionsOrder = new List<String>(question.SelectedList.Split(','));
-               string OptionChosen = question.OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).Value;
-               string OptionCorrect = question.OptionList.Find(q => q.isAnswer == true).Value;
-                Report tmpReport = new Report(question.Value, OptionChosen, OptionCorrect, (OptionChosen==OptionCorrect)?"Correct":"Wrong");
+               string OptionChosen = question.OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).DisplayID;
+               string OptionCorrect = question.OptionList.Find(q => q.isAnswer == true).DisplayID;
+                Report tmpReport = new Report(question.DisplayID.ToString(), OptionChosen, OptionCorrect, (OptionChosen==OptionCorrect)?"Correct":"Wrong");
                report.Add(tmpReport);
             }
         }

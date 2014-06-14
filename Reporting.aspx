@@ -5,10 +5,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Report</title>
+      <style type="text/css">
+    #divCenter {
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    }
+    </style>
+     <script type="text/javascript">
+         function PrintPage() {
+             window.print();
+         }
+</script>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div id="divCenter">
         <asp:Label ID="lblReport" runat="server" ></asp:Label>
         <asp:GridView ID="gdvReport" runat="server" AutoGenerateColumns="false">
             <Columns>   
@@ -27,6 +43,7 @@
                 </Columns>
         </asp:GridView>
         <asp:Button ID="btnReturn" runat="server" Text="Return to main menu" OnClick="btnReturn_Click" />
+        <asp:Button ID="btnPrint" runat="server" Text="Print" OnClientClick="javascript:PrintPage();" />
         
     </div>
     </form>

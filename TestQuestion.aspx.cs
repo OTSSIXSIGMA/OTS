@@ -34,8 +34,8 @@ public partial class TestQuestion : System.Web.UI.Page
                 {
                     if (((List<Question>)(Session["Questions"])).Exists(q => q.SelectedList != null))
                     {
-                        lblError.Text = "Your previous session has been retrieved. ";
                         QuestionID = ((List<Question>)(Session["Questions"])).FindLast(q => q.SelectedList != null).ID;
+                        lblError.Text = "\n Your previous session has been retrieved. ";
                     }
                     else
                     {
@@ -53,12 +53,33 @@ public partial class TestQuestion : System.Web.UI.Page
             }
 
             question = ((List<Question>)Session["Questions"]).Find(q => q.ID == QuestionID);
-            lblQuestion.Text = question.Value;
+            lblQuestion.Text = question.DisplayID+". "+question.Value;
+            ICollection<string> matches =
+            Regex.Matches(question.Value.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
+           .Cast<Match>()
+           .Select(x => x.Groups[1].Value)
+           .ToList();
+            foreach(string match in matches )
+            {
+                string wildcard = "[" + match + "]";
+                lblQuestion.Text = lblQuestion.Text.Replace(wildcard, "<a href='Description.aspx?name=" + match + "' rel=shadowbox;height=700;width=700>" + match + "</a>");   
+            }
 
             foreach (Option option in question.OptionList)
             {
                 ListItem tmpItem = new ListItem(option.ID.ToString(), option.Value);
-                tmpItem.Text = "<a href='Description.aspx?id=" +option.ID + "' rel=shadowbox;height=700;width=700>" + tmpItem.Value + "</a>";
+                //tmpItem.Text = "<a href='Description.aspx?id=" +option.ID + "' rel=shadowbox;height=700;width=700>" + tmpItem.Value + "</a>";
+                tmpItem.Text = "("+ option.DisplayID+") "+ option.Value;
+                 matches =
+                 Regex.Matches(option.Value.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
+                .Cast<Match>()
+                .Select(x => x.Groups[1].Value)
+                .ToList();
+                foreach (string match in matches)
+                {
+                    string wildcard = "[" + match + "]";
+                    tmpItem.Text = tmpItem.Text.Replace(wildcard, "<a href='Description.aspx?name=" + match + "' rel=shadowbox;height=700;width=700>" + match + "</a>");
+                }
                 rblOptions.Items.Add(tmpItem);
             }
 
@@ -83,6 +104,8 @@ public partial class TestQuestion : System.Web.UI.Page
             {
                 Session["SessionID"] = Session["SessionID"] + "CLOSED"; 
             }
+
+           
             
         }
 
