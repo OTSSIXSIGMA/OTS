@@ -57,24 +57,11 @@ public partial class Login : System.Web.UI.Page
                 }
                 else 
                 {
-                    bool isOld = false;
-                    Session["SessionID"] = Guid.NewGuid().ToString();
-                    if (Session["Questions"] != null)
-                    {
-                        foreach (Question question in (List<Question>)(Session["Questions"]))
-                        {
-                            question.SelectedList = null;
-                        }
-                        isOld = true;
-                    }
                     Session["Options"] = GetOptions();
                     Session["Questions"] = GetQuestions();
                     Session["Descriptions"] = GetDescriptions();
                     Session["ResultList"] = null;
-                    if (!isOld)
-                    {
-                        CheckOpenSession();
-                    }
+                    CheckOpenSession();
                     Response.Redirect("StudentMenu.aspx");
                 }
             }

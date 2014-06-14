@@ -19,6 +19,11 @@ public partial class Menu : System.Web.UI.Page
     }
     protected void btnStartTest_Click(object sender, EventArgs e)
     {
+        Session["SessionID"] = Guid.NewGuid().ToString();
+        foreach(Question question in ((List<Question>)(Session["Questions"])))
+        {
+            question.SelectedList=null;
+        }
         Response.Redirect("TestQuestion.aspx");
     }
     protected void btnSignout_Click(object sender, EventArgs e)
