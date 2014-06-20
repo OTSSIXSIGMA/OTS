@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title>Report</title>
       <style type="text/css">
     #divCenter {
@@ -38,6 +38,9 @@
                <ItemStyle HorizontalAlign="Center" />
                </asp:BoundField>
             <asp:BoundField DataField="Result" HeaderText="Result">
+               <ItemStyle HorizontalAlign="Center" />
+               </asp:BoundField>
+                <asp:BoundField DataField="CorrectRate" HeaderText="CorrectRate %">
                <ItemStyle HorizontalAlign="Center" />
                </asp:BoundField>
                 </Columns>
