@@ -42,7 +42,11 @@ public partial class Review : System.Web.UI.Page
             LblResult.Text = result;
         }
 
+<<<<<<< HEAD
         LblResult.Text = LblResult.Text+"<br/> Accuarcy = " + Accuracy + "%";
+=======
+      //  LblResult.Text = LblResult.Text + "<br/> Accuarcy = " + Accuracy + "%";
+>>>>>>> origin/master
 
 
     }
