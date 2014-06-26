@@ -60,7 +60,9 @@ public partial class Login : System.Web.UI.Page
                     Session["Options"] = GetOptions();
                     Session["Questions"] = GetQuestions();
                     Session["Descriptions"] = GetDescriptions();
+                    Session["Overviews"] = GetOverview();
                     Session["ResultList"] = null;
+                    Session["CurrentOverviewID"] = 0;
                     CheckOpenSession();
                     Response.Redirect("StudentMenu.aspx");
                 }
@@ -99,7 +101,7 @@ public partial class Login : System.Web.UI.Page
             ((List<Option>)Session["Options"]).FindAll(que => que.QuestionID == Convert.ToInt16(reader.GetValue(0))).ElementAt(1).DisplayID = "b";
             ((List<Option>)Session["Options"]).FindAll(que => que.QuestionID == Convert.ToInt16(reader.GetValue(0))).ElementAt(2).DisplayID = "c";
             ((List<Option>)Session["Options"]).FindAll(que => que.QuestionID == Convert.ToInt16(reader.GetValue(0))).ElementAt(3).DisplayID = "d";
-            tmpQuestion = new Question(Convert.ToInt16(reader.GetValue(0)), DisplayID, reader.GetValue(1).ToString(), ((List<Option>)Session["Options"]).FindAll(que => que.QuestionID == Convert.ToInt16(reader.GetValue(0))));
+            tmpQuestion = new Question(Convert.ToInt16(reader.GetValue(0)), DisplayID, reader.GetValue(1).ToString(), Convert.ToInt16(reader.GetValue(2)), (!string.IsNullOrEmpty(reader.GetValue(3).ToString())? (int?)Convert.ToInt32(reader.GetValue(3)) : null),((List<Option>)Session["Options"]).FindAll(que => que.QuestionID == Convert.ToInt16(reader.GetValue(0))));
             Questions.Add(tmpQuestion);
             DisplayID++;
         }
@@ -159,6 +161,34 @@ public partial class Login : System.Web.UI.Page
         reader.Close();
         connection.Close();
         return Descriptions;
+    }
+    protected List<Overview> GetOverview()
+    {
+        #region Declaration
+        SqlDataReader reader;
+        SqlConnection connection;
+        SqlCommand cmd;
+        string connectionstring;
+        List<Overview> Overviews;
+        Overview tmpOverview;
+        #endregion
+
+        connectionstring = "Server=55eb3ba5-c93f-4d5d-a746-a33d0187f51c.sqlserver.sequelizer.com;Database=db55eb3ba5c93f4d5da746a33d0187f51c;User ID=decjkfdwyfdldmsg;Password=joja5KVaS7pvgVztqJtWcVkv2Y2YyYpuUbbExi4FxeLA6UVjVXkFi5mvdVgfR5H2;";
+        connection = new SqlConnection(connectionstring);
+        cmd = new SqlCommand("ovr_GetOverviews", connection);
+        cmd.CommandType = CommandType.StoredProcedure;
+
+        connection.Open();
+        reader = cmd.ExecuteReader();
+        Overviews = new List<Overview>();
+        while (reader.Read())
+        {
+            tmpOverview = new Overview(Convert.ToInt16(Convert.ToInt16( reader.GetValue(0))), reader.GetValue(1).ToString(), reader.GetValue(2).ToString());
+            Overviews.Add(tmpOverview);
+        }
+        reader.Close();
+        connection.Close();
+        return Overviews;
     }
     protected void CheckOpenSession()
     {
