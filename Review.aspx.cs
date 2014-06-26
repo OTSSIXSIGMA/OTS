@@ -12,14 +12,14 @@ public partial class Review : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         List<String> OptionsOrder = new List<String>(((Question)Session["Question"]).SelectedList.Split(','));
-        string OptionChosen =  ((Question)Session["Question"]).OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).Value.Replace("[","").Replace("]","");
+        string OptionChosen = ((Question)Session["Question"]).OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).Value.Replace("[", "").Replace("]", "");
         string OptionCorrect = ((Question)Session["Question"]).OptionList.Find(q => q.isAnswer == true).Value.Replace("[", "").Replace("]", "");
         OptionChosen = "(" + ((Question)Session["Question"]).OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).DisplayID + ")" + OptionChosen;
-        OptionCorrect = "(" + ((Question)Session["Question"]).OptionList.Find(q => q.isAnswer == true).DisplayID+ ")" + OptionCorrect;
-        int numberCorrect=0;
-        foreach (Question question in ((List<Question>)Session["Questions"]).FindAll(x=>x.SelectedList!=null))
+        OptionCorrect = "(" + ((Question)Session["Question"]).OptionList.Find(q => q.isAnswer == true).DisplayID + ")" + OptionCorrect;
+        int numberCorrect = 0;
+        foreach (Question question in ((List<Question>)Session["Questions"]).FindAll(x => x.SelectedList != null))
         {
-            OptionsOrder = new List<string>( question.SelectedList.Split(','));
+            OptionsOrder = new List<string>(question.SelectedList.Split(','));
             string Chosen = question.OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).Value.Replace("[", "").Replace("]", "");
             string Correct = question.OptionList.Find(q => q.isAnswer == true).Value.Replace("[", "").Replace("]", "");
             if (Chosen == Correct)
@@ -42,11 +42,7 @@ public partial class Review : System.Web.UI.Page
             LblResult.Text = result;
         }
 
-<<<<<<< HEAD
-        LblResult.Text = LblResult.Text+"<br/> Accuarcy = " + Accuracy + "%";
-=======
-      //  LblResult.Text = LblResult.Text + "<br/> Accuarcy = " + Accuracy + "%";
->>>>>>> origin/master
+        LblResult.Text = LblResult.Text + "<br/> Accuarcy = " + Accuracy + "%";
 
 
     }
