@@ -28,9 +28,10 @@ public partial class TestQuestion : System.Web.UI.Page
             question = ((List<Question>)Session["Questions"]).ElementAt(index + 1);
             if (question.OverviewID != null && question.OverviewID != Convert.ToInt16(Session["CurrentOverviewID"]))
             {
-                lblQuestion.Text = ((List<Overview>)Session["Overviews"]).Find(x => x.ID == question.OverviewID).Value;
+                lblQuestion.Text = ((List<Overview>)Session["Overviews"]).Find(x => x.ID == question.OverviewID).Title+"<br/><br/>"+ ((List<Overview>)Session["Overviews"]).Find(x => x.ID == question.OverviewID).Value;
                 Session["CurrentOverviewID"] = question.OverviewID;
                 btnOverviewNext.Visible = true;
+                btnSubmit.Visible = false;
             }
             else
             {
@@ -183,6 +184,7 @@ public partial class TestQuestion : System.Web.UI.Page
             QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index - 1).ID;
             question = ((List<Question>)(Session["Questions"])).ElementAt(((List<Question>)(Session["Questions"])).FindIndex(q => q.ID == QuestionID));
             Session["Question"] = question;
+            Session["CurrentOverviewID"] = question.OverviewID;
         }
         else
         {
@@ -197,11 +199,15 @@ public partial class TestQuestion : System.Web.UI.Page
     }
     protected void btnOverviewNext_Click(object sender, EventArgs e)
     {
-        int index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(((Question)Session["Question"]).ID));
-        QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index + 1).ID;
-        question = ((List<Question>)(Session["Questions"])).ElementAt(((List<Question>)(Session["Questions"])).FindIndex(q => q.ID == QuestionID));
-        Session["Question"] = question;
-
+        int index = 0;
+        if (Session["Question"] != null)
+        {
+            index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(((Question)Session["Question"]).ID));
+        }
+            QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index + 1).ID;
+            question = ((List<Question>)(Session["Questions"])).ElementAt(((List<Question>)(Session["Questions"])).FindIndex(q => q.ID == QuestionID));
+            Session["Question"] = question;
+ 
         Response.Redirect("TestQuestion.aspx");
     }
 }
