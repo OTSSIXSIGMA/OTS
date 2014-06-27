@@ -30,13 +30,14 @@ public partial class TestQuestion : System.Web.UI.Page
             {
                 lblQuestion.Text = ((List<Overview>)Session["Overviews"]).Find(x => x.ID == question.OverviewID).Value;
                 Session["CurrentOverviewID"] = question.OverviewID;
+                btnOverviewNext.Visible = true;
             }
             else
             {
                 btnPrevious.Visible = false;
                 if (Request.UrlReferrer != null)
                 {
-                    if ((Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("review.aspx")) || (Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("testquestion.aspx")))
+                    if ((Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("review.aspx")))
                     {
                         if (Session["Question"] != null)
                         {
@@ -54,6 +55,10 @@ public partial class TestQuestion : System.Web.UI.Page
                         {
                             QuestionID = ((List<Question>)(Session["Questions"])).ElementAt(0).ID;
                         }
+                    }
+                    else if ((Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("testquestion.aspx")))
+                    {
+                        QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index).ID;
                     }
                 }
                 else
@@ -189,5 +194,14 @@ public partial class TestQuestion : System.Web.UI.Page
     protected void btnMenu_Click(object sender, EventArgs e)
     {
         Response.Redirect("StudentMenu.aspx");
+    }
+    protected void btnOverviewNext_Click(object sender, EventArgs e)
+    {
+        int index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(((Question)Session["Question"]).ID));
+        QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index + 1).ID;
+        question = ((List<Question>)(Session["Questions"])).ElementAt(((List<Question>)(Session["Questions"])).FindIndex(q => q.ID == QuestionID));
+        Session["Question"] = question;
+
+        Response.Redirect("TestQuestion.aspx");
     }
 }
