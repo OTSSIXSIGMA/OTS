@@ -97,10 +97,11 @@ public partial class Login : System.Web.UI.Page
         int DisplayID = 1;
         while (reader.Read())
         {
-            ((List<Option>)Session["Options"]).FindAll(que => que.QuestionID == Convert.ToInt16(reader.GetValue(0))).ElementAt(0).DisplayID = "a";
-            ((List<Option>)Session["Options"]).FindAll(que => que.QuestionID == Convert.ToInt16(reader.GetValue(0))).ElementAt(1).DisplayID = "b";
-            ((List<Option>)Session["Options"]).FindAll(que => que.QuestionID == Convert.ToInt16(reader.GetValue(0))).ElementAt(2).DisplayID = "c";
-            ((List<Option>)Session["Options"]).FindAll(que => que.QuestionID == Convert.ToInt16(reader.GetValue(0))).ElementAt(3).DisplayID = "d";
+            List<Option> optDisplay = ((List<Option>)Session["Options"]).FindAll(que => que.QuestionID == Convert.ToInt16(reader.GetValue(0)));
+            optDisplay.ElementAt(0).DisplayID = "a";
+            optDisplay.ElementAt(1).DisplayID = "b";
+            optDisplay.ElementAt(2).DisplayID = "c";
+            optDisplay.ElementAt(3).DisplayID = "d";
             tmpQuestion = new Question(Convert.ToInt16(reader.GetValue(0)), DisplayID, reader.GetValue(1).ToString(), Convert.ToInt16(reader.GetValue(2)), (!string.IsNullOrEmpty(reader.GetValue(3).ToString())? (int?)Convert.ToInt32(reader.GetValue(3)) : null),((List<Option>)Session["Options"]).FindAll(que => que.QuestionID == Convert.ToInt16(reader.GetValue(0))));
             Questions.Add(tmpQuestion);
             DisplayID++;

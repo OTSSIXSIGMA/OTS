@@ -25,7 +25,7 @@ public partial class TestQuestion : System.Web.UI.Page
             }
             else
             { index = -1; }
-            question = ((List<Question>)Session["Questions"]).ElementAt(index + 1);
+            question = ((List<Question>)Session["Questions"]).ElementAt(index +1);
             if (question.OverviewID != null && question.OverviewID != Convert.ToInt16(Session["CurrentOverviewID"]))
             {
                 lblQuestion.Text = ((List<Overview>)Session["Overviews"]).Find(x => x.ID == question.OverviewID).Title+"<br/><br/>"+ ((List<Overview>)Session["Overviews"]).Find(x => x.ID == question.OverviewID).Value;
@@ -204,7 +204,7 @@ public partial class TestQuestion : System.Web.UI.Page
         {
             index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(((Question)Session["Question"]).ID));
         }
-            QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index + 1).ID;
+            QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index).ID;
             question = ((List<Question>)(Session["Questions"])).ElementAt(((List<Question>)(Session["Questions"])).FindIndex(q => q.ID == QuestionID));
             Session["Question"] = question;
  
