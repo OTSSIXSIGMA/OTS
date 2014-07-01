@@ -30,7 +30,7 @@ public partial class Reporting : System.Web.UI.Page
                string OptionChosen = question.OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).DisplayID;
                string OptionCorrect = question.OptionList.Find(q => q.isAnswer == true).DisplayID;
                int numberCorrect = 0;
-               foreach (Question quelocal in ((List<Question>)Session["Questions"]).GetRange(0,QuestionCount))
+               foreach (Question quelocal in ((List<Question>)Session["Questions"]).GetRange(0,QuestionCount).FindAll(x=>!x.ID.Equals(-1)))
                {
                    List<String> Options = new List<String>(quelocal.SelectedList.Split(','));
                    string Chosen = quelocal.OptionList.Find(q => q.ID == Convert.ToInt16(Options.ElementAt(OptionsOrder.Count - 1))).Value.Replace("[", "").Replace("]", "");

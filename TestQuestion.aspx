@@ -38,7 +38,7 @@
         <asp:UpdatePanel ID="uppOptions" runat="server" UpdateMode="Always"> 
             <ContentTemplate>
         <asp:Panel ID="pnlRadioBtn" runat="server">
-                <asp:RadioButtonList ID="rblOptions" runat="server" RepeatColumns="1" RepeatDirection="Vertical" ValidationGroup="OptionGroup" Width="90%" OnSelectedIndexChanged="rblOptions_SelectedIndexChanged"  AutoPostBack="true"></asp:RadioButtonList>      
+                <asp:RadioButtonList ID="rblOptions" runat="server" RepeatColumns="1" RepeatDirection="Vertical" ValidationGroup="options" Width="90%" OnSelectedIndexChanged="rblOptions_SelectedIndexChanged"  AutoPostBack="true"></asp:RadioButtonList>      
             <asp:RequiredFieldValidator   
             ID="RqdOptions"  
             runat="server"  
