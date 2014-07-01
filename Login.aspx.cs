@@ -60,9 +60,8 @@ public partial class Login : System.Web.UI.Page
                     Session["Options"] = GetOptions();
                     Session["Questions"] = GetQuestions();
                     Session["Descriptions"] = GetDescriptions();
-                    Session["Overviews"] = GetOverview();
+                    GetOverviews();
                     Session["ResultList"] = null;
-                    Session["CurrentOverviewID"] = 0;
                     CheckOpenSession();
                     Response.Redirect("StudentMenu.aspx");
                 }
@@ -163,7 +162,7 @@ public partial class Login : System.Web.UI.Page
         connection.Close();
         return Descriptions;
     }
-    protected List<Overview> GetOverview()
+    protected void GetOverviews()
     {
         #region Declaration
         SqlDataReader reader;
@@ -189,7 +188,19 @@ public partial class Login : System.Web.UI.Page
         }
         reader.Close();
         connection.Close();
-        return Overviews;
+        int overviewID = 0;
+        List<Question> questions = new List<Question>();
+        questions = ((List<Question>)Session["Questions"]).ToList();
+        foreach (Question question in questions)
+        {
+            if (!string.IsNullOrEmpty( question.OverviewID.ToString()) && (question.OverviewID!=overviewID))
+            {
+                overviewID = (int)question.OverviewID;
+                Question tmpQuestion = new Question(Overviews.Find(x => x.ID == question.OverviewID));
+                ((List<Question>)Session["Questions"]).Insert(((List<Question>)Session["Questions"]).IndexOf(question), tmpQuestion);
+            }
+        }
+
     }
     protected void CheckOpenSession()
     {

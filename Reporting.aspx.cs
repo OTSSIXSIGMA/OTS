@@ -21,7 +21,7 @@ public partial class Reporting : System.Web.UI.Page
         { }
         List<OnlineTrainingBL.Report> report = new List<OnlineTrainingBL.Report>();
         int QuestionCount=0;
-        foreach (Question question in ((List<Question>)Session["Questions"]))
+        foreach (Question question in ((List<Question>)Session["Questions"]).FindAll(x=> !x.ID.Equals(-1)))
         {
             if(!string.IsNullOrEmpty( question.SelectedList))
             {

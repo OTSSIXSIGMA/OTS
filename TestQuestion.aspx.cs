@@ -11,63 +11,61 @@ using System.Text.RegularExpressions;
 
 public partial class TestQuestion : System.Web.UI.Page
 {
-    int index=0;
+    int index = 0;
     int QuestionID;
     Question question;
-    
+
     protected void Page_Load(object sender, EventArgs e)
     {
-         if (!Page.IsPostBack)
+        if (!Page.IsPostBack)
         {
-            if (((Question)Session["Question"]) != null)
+            btnPrevious.Visible = false;
+            if (Request.UrlReferrer != null)
             {
-                index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(((Question)Session["Question"]).ID));
-            }
-            else
-            { index = -1; }
-            question = ((List<Question>)Session["Questions"]).ElementAt(index +1);
-            if (question.OverviewID != null && question.OverviewID != Convert.ToInt16(Session["CurrentOverviewID"]))
-            {
-                lblQuestion.Text = ((List<Overview>)Session["Overviews"]).Find(x => x.ID == question.OverviewID).Title+"<br/><br/>"+ ((List<Overview>)Session["Overviews"]).Find(x => x.ID == question.OverviewID).Value;
-                Session["CurrentOverviewID"] = question.OverviewID;
-                btnOverviewNext.Visible = true;
-                btnSubmit.Visible = false;
-            }
-            else
-            {
-                btnPrevious.Visible = false;
-                if (Request.UrlReferrer != null)
+                if ((Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("review.aspx")))
                 {
-                    if ((Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("review.aspx")))
+                    if (Session["Question"] != null)
                     {
-                        if (Session["Question"] != null)
-                        {
-                            QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index + 1).ID;
-                        }
-                    }
-                    else if ((Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("studentmenu.aspx")))
-                    {
-                        if (((List<Question>)(Session["Questions"])).Exists(q => q.SelectedList != null))
-                        {
-                            QuestionID = ((List<Question>)(Session["Questions"])).FindLast(q => q.SelectedList != null).ID;
-                            lblError.Text = "\n Your previous session has been retrieved. ";
-                        }
-                        else
-                        {
-                            QuestionID = ((List<Question>)(Session["Questions"])).ElementAt(0).ID;
-                        }
-                    }
-                    else if ((Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("testquestion.aspx")))
-                    {
-                        QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index).ID;
+                        index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(((Question)Session["Question"]).ID));
+                        QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index + 1).ID;
                     }
                 }
-                else
+                else if ((Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("studentmenu.aspx")))
                 {
-                    QuestionID = ((List<Question>)(Session["Questions"])).ElementAt(0).ID;
+                    if (((List<Question>)(Session["Questions"])).Exists(q => q.SelectedList != null))
+                    {
+                        QuestionID = ((List<Question>)(Session["Questions"])).FindLast(q => q.SelectedList != null).ID;
+                        lblError.Text = "\n Your previous session has been retrieved. ";
+                    }
+                    else
+                    {
+                        QuestionID = ((List<Question>)(Session["Questions"])).ElementAt(0).ID;
+                    }
                 }
+                else if ((Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("testquestion.aspx")))
+                {
+                    QuestionID = ((Question)Session["Question"]).ID;
+                }
+            }
+            else
+            {
+                QuestionID = ((List<Question>)(Session["Questions"])).ElementAt(0).ID;
+            }
 
-                question = ((List<Question>)Session["Questions"]).Find(q => q.ID == QuestionID);
+            question = ((List<Question>)Session["Questions"]).Find(q => q.ID == QuestionID);
+
+            if (question.ID == -1)
+            {
+                lblQuestion.Text = question.Value;
+                ListItem tmpItem = new ListItem("","");
+                rblOptions.Items.Add(tmpItem);
+                rblOptions.SelectedIndex = 0; ;
+                rblOptions.Visible = false;
+                Session["Question"] = question;
+            }
+
+            else
+            {
                 lblQuestion.Text = question.DisplayID + ". " + question.Value;
                 ICollection<string> matches =
                 Regex.Matches(question.Value.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
@@ -121,18 +119,21 @@ public partial class TestQuestion : System.Web.UI.Page
                 }
 
             }
-            
+
+
         }
 
     }
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
-        if (rblOptions.Items.Count != 0)
+        if (((Question)Session["Question"]).ID.ToString() != "-1")
         {
             #region connection
             string connectionstring = "Server=55eb3ba5-c93f-4d5d-a746-a33d0187f51c.sqlserver.sequelizer.com;Database=db55eb3ba5c93f4d5da746a33d0187f51c;User ID=decjkfdwyfdldmsg;Password=joja5KVaS7pvgVztqJtWcVkv2Y2YyYpuUbbExi4FxeLA6UVjVXkFi5mvdVgfR5H2;";
             SqlConnection connection = new SqlConnection(connectionstring);
             #endregion
+
+
             SqlCommand cmd = new SqlCommand("uam_InsertData", connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@UserID", Convert.ToInt16(Session["UserID"]));
@@ -158,20 +159,24 @@ public partial class TestQuestion : System.Web.UI.Page
             }
         }
         else
-        { Response.Redirect("TestQuestion.aspx"); }
+        {
+            index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(((Question)Session["Question"]).ID));
+            Session["Question"] = ((List<Question>)Session["Questions"]).ElementAt(index + 1);
+            Response.Redirect("TestQuestion.aspx");
+        }
 
     }
     protected void rblOptions_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (Session["Question"] != null)
         {
-            if (string.IsNullOrEmpty( ((Question)Session["Question"]).SelectedList))
+            if (string.IsNullOrEmpty(((Question)Session["Question"]).SelectedList))
             {
                 ((Question)Session["Question"]).SelectedList = ((Question)Session["Question"]).SelectedList + ((Question)Session["Question"]).OptionList.Find(q => q.Value == rblOptions.SelectedItem.Value).ID.ToString();
             }
             else
             {
-                ((Question)Session["Question"]).SelectedList = ((Question)Session["Question"]).SelectedList + ","+((Question)Session["Question"]).OptionList.Find(q=>q.Value==rblOptions.SelectedItem.Value).ID.ToString();
+                ((Question)Session["Question"]).SelectedList = ((Question)Session["Question"]).SelectedList + "," + ((Question)Session["Question"]).OptionList.Find(q => q.Value == rblOptions.SelectedItem.Value).ID.ToString();
             }
 
         }
@@ -184,7 +189,6 @@ public partial class TestQuestion : System.Web.UI.Page
             QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index - 1).ID;
             question = ((List<Question>)(Session["Questions"])).ElementAt(((List<Question>)(Session["Questions"])).FindIndex(q => q.ID == QuestionID));
             Session["Question"] = question;
-            Session["CurrentOverviewID"] = question.OverviewID;
         }
         else
         {
@@ -196,18 +200,5 @@ public partial class TestQuestion : System.Web.UI.Page
     protected void btnMenu_Click(object sender, EventArgs e)
     {
         Response.Redirect("StudentMenu.aspx");
-    }
-    protected void btnOverviewNext_Click(object sender, EventArgs e)
-    {
-        int index = 0;
-        if (Session["Question"] != null)
-        {
-            index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(((Question)Session["Question"]).ID));
-        }
-            QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index).ID;
-            question = ((List<Question>)(Session["Questions"])).ElementAt(((List<Question>)(Session["Questions"])).FindIndex(q => q.ID == QuestionID));
-            Session["Question"] = question;
- 
-        Response.Redirect("TestQuestion.aspx");
     }
 }

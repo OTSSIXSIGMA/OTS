@@ -51,7 +51,6 @@
         </ContentTemplate>
         </asp:UpdatePanel>
         <asp:Button ID ="btnPrevious" runat ="server" Text="Previous" OnClick="btnPrevious_Click"/>
-        <asp:Button ID ="btnOverviewNext" runat ="server" Text="Next" OnClick="btnOverviewNext_Click" Visible="false"/>
         <asp:Button ID="btnSubmit" runat="server" Text="Next" OnClick="btnSubmit_Click" ValidationGroup="options"  CausesValidation="true" />
         <asp:Button ID="btnMenu" runat="server" Text="Return to main menu" OnClick="btnMenu_Click" />
         <br />
