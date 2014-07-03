@@ -17,7 +17,7 @@ public partial class Review : System.Web.UI.Page
         OptionChosen = "(" + ((Question)Session["Question"]).OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).DisplayID + ")" + OptionChosen;
         OptionCorrect = "(" + ((Question)Session["Question"]).OptionList.Find(q => q.isAnswer == true).DisplayID+ ")" + OptionCorrect;
         int numberCorrect=0;
-        foreach (Question question in ((List<Question>)Session["Questions"]).FindAll(x=>x.SelectedList!=null &&  !x.ID.Equals(-1)))
+        foreach (Question question in ((List<Question>)Session["Questions"]).FindAll(x=>x.SelectedList!=null &&  x.ID>0))
         {
             OptionsOrder = new List<string>( question.SelectedList.Split(','));
             string Chosen = question.OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).Value.Replace("[", "").Replace("]", "");

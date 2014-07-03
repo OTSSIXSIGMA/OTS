@@ -52,15 +52,19 @@ public partial class TestQuestion : System.Web.UI.Page
                 QuestionID = ((List<Question>)(Session["Questions"])).ElementAt(0).ID;
             }
 
-            question = ((List<Question>)Session["Questions"]).Find(q => q.ID == QuestionID);
+                question = ((List<Question>)Session["Questions"]).Find(q => q.ID == QuestionID);
 
-            if (question.ID == -1)
+            if (question.ID < 0)
             {
                 lblQuestion.Text = question.Value;
                 ListItem tmpItem = new ListItem("","");
                 rblOptions.Items.Add(tmpItem);
                 rblOptions.SelectedIndex = 0; ;
                 rblOptions.Visible = false;
+                if (question.ID != -1)
+                {
+                    btnPrevious.Visible = true;
+                }
                 Session["Question"] = question;
             }
 
@@ -126,7 +130,7 @@ public partial class TestQuestion : System.Web.UI.Page
     }
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
-        if (((Question)Session["Question"]).ID != -1)
+        if (((Question)Session["Question"]).ID > 0)
         {
             #region connection
             string connectionstring = "Server=55eb3ba5-c93f-4d5d-a746-a33d0187f51c.sqlserver.sequelizer.com;Database=db55eb3ba5c93f4d5da746a33d0187f51c;User ID=decjkfdwyfdldmsg;Password=joja5KVaS7pvgVztqJtWcVkv2Y2YyYpuUbbExi4FxeLA6UVjVXkFi5mvdVgfR5H2;";
