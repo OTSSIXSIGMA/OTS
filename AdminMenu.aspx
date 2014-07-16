@@ -21,7 +21,8 @@
     <form id="form1" runat="server">
     <div id="divCenter">
         <asp:Button ID="btnUsers" runat="server" Text="Users" OnClick="btnUsers_Click"/>
-        <asp:Button ID="btnQuestions" runat="server" Text="Questions" OnClick="btnQuestions_Click"/>
+        <asp:Button ID="btnTests" runat="server" Text="Tests" OnClick="btnTests_Click"/>
+
     </div>
     </form>
 </body>

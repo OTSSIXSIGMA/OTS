@@ -143,7 +143,7 @@ public partial class TestQuestion : System.Web.UI.Page
             cmd.Parameters.AddWithValue("@UserID", Convert.ToInt16(Session["UserID"]));
             cmd.Parameters.AddWithValue("@SessionID", Session["SessionID"]);
             cmd.Parameters.AddWithValue("@QuestionID", ((Question)Session["Question"]).ID);
-            cmd.Parameters.AddWithValue("@QuestionID", ((Question)Session["TestID"]).ID);
+            cmd.Parameters.AddWithValue("@TestID", ((Question)Session["Question"]).TestID);
             cmd.Parameters.AddWithValue("@SelectedList", ((Question)Session["Question"]).SelectedList);
             foreach (SqlParameter parameter in cmd.Parameters)
             {

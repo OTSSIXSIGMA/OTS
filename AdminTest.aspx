@@ -1,31 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AdminQuestions.aspx.cs" Inherits="AdminQuestions" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AdminTest.aspx.cs" Inherits="AdminTest" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Questions</title>
-    <style type="text/css">
-#divCenter {
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width: 100px;
-    height: 100px;
-}
-</style>
+    <title>Admin Test</title>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="divCenter">
-         <asp:GridView ID="grdQuestions" runat="server" DataKeyNames="que_ID" AutoGenerateColumns="false" OnRowDeleting="grdQuestions_RowDeleting" OnRowEditing="grdQuestions_RowEditing">
+    <div>
+            <asp:GridView ID="grdTests" runat="server" DataKeyNames="tst_ID" AutoGenerateColumns="false" OnRowDeleting="grdTests_RowDeleting" OnRowEditing="grdTests_RowEditing">
             <Columns>   
-               <asp:BoundField DataField="que_ID" HeaderText="Quetion ID">
+               <asp:BoundField DataField="tst_Title" HeaderText="Test Name">
                <ItemStyle HorizontalAlign="Center" />
                </asp:BoundField>
-             <asp:BoundField DataField="que_Value" HeaderText="Description">
+             <asp:BoundField DataField="tst_Description" HeaderText="Description">
                <ItemStyle HorizontalAlign="Center" />
                </asp:BoundField>
              
