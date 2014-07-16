@@ -9,13 +9,13 @@
 
     <style type="text/css">
 #divCenter {
-	position: absolute;
+    position: absolute;
     top: 45%;
     left: 40%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 500px;
-    height: 500px;
+    width: 1000px;
+    height: 1000px;
 }
 
 
