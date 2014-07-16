@@ -10,7 +10,7 @@
     <style type="text/css">
 #divCenter {
     position: absolute;
-    top: 45%;
+    top: 20%;
     left: 20%;
     margin-top: -50px;
     margin-left: -50px;
