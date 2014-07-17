@@ -13,12 +13,12 @@
     <style type="text/css">
 #divCenter {
     position: absolute;
-    top: 35%;
-    left: 30%;
+    top: 20%;
+    left: 20%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 400px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
 }
 </style>
 </head>
