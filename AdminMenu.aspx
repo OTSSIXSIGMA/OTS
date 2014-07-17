@@ -12,8 +12,12 @@
     left: 50%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 100px;
+    width: 1000px;
     height: 100px;
+    font-weight: bold;
+    font-size : 16px;
+    font-family : Calibri;
+    color :  #0000CD;
 }
 </style>
 </head>
