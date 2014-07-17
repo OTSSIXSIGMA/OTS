@@ -9,7 +9,7 @@
     #divCenter {
     position: absolute;
     top: 45%;
-    left: 40%;
+    left: 20%;
     margin-top: -50px;
     margin-left: -50px;
     width: 1000px;
