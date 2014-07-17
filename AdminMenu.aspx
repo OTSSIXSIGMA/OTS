@@ -24,7 +24,7 @@
     <div id="divCenter">
     <p> Welcome Admin !!</p>
         <asp:Button ID="btnUsers" runat="server" Text="Manage Users" OnClick="btnUsers_Click"/>
-        <br/>
+        
         <asp:Button ID="btnTests" runat="server" Text="Manage Tests" OnClick="btnTests_Click"/>
     
     </div>
