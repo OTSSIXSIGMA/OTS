@@ -8,12 +8,12 @@
     <style type="text/css">
 #divCenter {
 	position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 20%;
+    left: 20%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 100px;
-    height: 100px;
+    width: 1000px;
+    height: 1000px;
 }
 </style>
 </head>
@@ -22,7 +22,7 @@
     <div id="divCenter">
          <asp:GridView ID="grdQuestions" runat="server" DataKeyNames="que_ID" AutoGenerateColumns="false" OnRowDeleting="grdQuestions_RowDeleting" OnRowEditing="grdQuestions_RowEditing">
             <Columns>   
-               <asp:BoundField DataField="que_ID" HeaderText="Quetion ID">
+               <asp:BoundField DataField="que_ID" HeaderText="Question ID" ForeColor="Blue" >
                <ItemStyle HorizontalAlign="Center" />
                </asp:BoundField>
              <asp:BoundField DataField="que_Value" HeaderText="Description">
