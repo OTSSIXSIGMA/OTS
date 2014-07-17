@@ -20,7 +20,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="divCenter">
+    <div>
         <table>
             <tr>
                 
@@ -38,7 +38,7 @@
                 
             </tr>
         </table>
-        <asp:TextBox ID="txtQuestion" runat="server" TextMode="MultiLine" ></asp:TextBox>
+        <asp:TextBox ID="txtQuestion" runat="server" TextMode="MultiLine" ToolTip="Update with a new value" Width="400px" length="100px"></asp:TextBox>
         <br />
         <br />
         <asp:TextBox ID="txtOption1" runat="server" TextMode="MultiLine"></asp:TextBox>
