@@ -7,13 +7,7 @@
     <title>Update Question</title>
     <style type="text/css">
     #divCenter {
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width: 1000px;
-    height: 1000px;
+	background-color:#81DAF5;
     }
 </style>
 
