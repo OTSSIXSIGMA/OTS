@@ -22,7 +22,7 @@
     <div id="divCenter">
         <p>Welcome Admin !!</p>
         <asp:Button ID="btnUsers" runat="server" Text="Manage Users" OnClick="btnUsers_Click"/>
-        <asp:Button ID="btnQuestions" runat="server" Text="Manage Questions" OnClick="btnQuestions_Click"/>
+        <asp:Button ID="btnTests" runat="server" Text="Manage Tests" OnClick="btnTests_Click"/>
         <asp:Button ID="btnSignout" runat="server" Text="Signout" OnClick="btnSignout_Click"/>
     </div>
     </form>
