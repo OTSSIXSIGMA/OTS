@@ -5,10 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Update Question</title>
+    <style type="text/css">
+    #divCenter {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 1000px;
+    height: 1000px;
+    }
+</style>
+
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div id="divCenter">
         <table>
             <tr>
                 
