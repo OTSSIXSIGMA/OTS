@@ -22,7 +22,7 @@
     <div id="divCenter">
          <asp:GridView ID="grdQuestions" runat="server" DataKeyNames="que_ID" AutoGenerateColumns="false" OnRowDeleting="grdQuestions_RowDeleting" OnRowEditing="grdQuestions_RowEditing">
             <Columns>   
-               <asp:BoundField DataField="que_ID" HeaderText="Question ID" ForeColor="Blue" >
+               <asp:BoundField DataField="que_ID" HeaderText="Question ID" Color="Blue" >
                <ItemStyle HorizontalAlign="Center" />
                </asp:BoundField>
              <asp:BoundField DataField="que_Value" HeaderText="Description">
