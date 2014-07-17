@@ -38,7 +38,7 @@
                 
             </tr>
         </table>
-        <asp:TextBox ID="txtQuestion" runat="server" TextMode="MultiLine" ToolTip="Update with a new value" Width="400px" length="100px"></asp:TextBox>
+        <asp:TextBox ID="txtQuestion" runat="server" TextMode="MultiLine" ToolTip="Update with a new value" Width="800px" length="300px"></asp:TextBox>
         <br />
         <br />
         <asp:TextBox ID="txtOption1" runat="server" TextMode="MultiLine"></asp:TextBox>
