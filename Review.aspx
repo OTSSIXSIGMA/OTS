@@ -17,6 +17,7 @@
     font-size : 16px;
     font-family : Calibri;
     font-weight : bold;
+    color : #660000;
     }
     </style>
      <script type="text/javascript" src="Resources/js/jquery-1.7.2.min.js"></script>
