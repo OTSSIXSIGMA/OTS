@@ -22,4 +22,12 @@ public partial class AdminMenu : System.Web.UI.Page
     {
         Response.Redirect("AdminTest.aspx");
     }
+    
+    protected void btnSignout_Click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        FormsAuthentication.SignOut();
+        Response.Redirect("Login.aspx");
+
+    }
 }
