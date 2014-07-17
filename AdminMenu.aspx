@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AdminMenu.aspx.cs" Inherits="AdminMenu" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AdminMenu.aspx.cs" Inherits="AdminMenu" %>
 
 <!DOCTYPE html>
 
@@ -7,27 +7,24 @@
     <title>Admin Menu</title>
     <style type="text/css">
 #divCenter {
-	position: absolute;
+    position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -50px;
     margin-left: -50px;
     width: 100px;
     height: 100px;
-    font-weight : bold;
-    color: #0000CD;
-    font-size : 16px;
+    font-size: 16px;
 }
 </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div id="divCenter">
-    <p>Welcome Admin !!</p>
-    
-        <asp:Button ID="btnUsers" runat="server" Text="Manage Users" OnClick="btnUsers_Click"/>
-        <asp:Button ID="btnTests" runat="server" Text="Manage Tests" OnClick="btnTests_Click"/>
-      </div>
+        <asp:Button ID="btnUsers" runat="server" Text="Users" OnClick="btnUsers_Click"/>
+        <asp:Button ID="btnTests" runat="server" Text="Tests" OnClick="btnTests_Click"/>
+
+    </div>
     </form>
 </body>
 </html>
