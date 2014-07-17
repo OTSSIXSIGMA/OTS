@@ -8,12 +8,14 @@
     <style type="text/css">
     #divCenter {
     position: absolute;
-    top: 45%;
-    left: 40%;
+    top: 20%;
+    left: 20%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 500px;
-    height: 100px;
+    width: 1000px;
+    height: 1000px;
+    font-size : 14px;
+    font-family : Calibri;
     }
     </style>
      <script type="text/javascript" src="Resources/js/jquery-1.7.2.min.js"></script>
