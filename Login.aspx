@@ -28,7 +28,7 @@
 </style>
     
 </head>
-<body>
+<body background=background.jpg>
   <form id="form1" runat="server">
     <div id="HeadingCenter" style="color:#0000FF; font-size: 16pt;font-family: tims, cursive, serif;font-weight: bold">
     <h3>Welcome to Online Training System</h3>
