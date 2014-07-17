@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Security;
 
 public partial class AdminQuestions : System.Web.UI.Page
 {
@@ -33,5 +34,12 @@ public partial class AdminQuestions : System.Web.UI.Page
     {
         string ID = grdQuestions.DataKeys[e.NewEditIndex].Value.ToString();
         Response.Redirect("UpdateQuestion.aspx?ID=" + ID);
+    }
+    protected void btnSignout_Click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        FormsAuthentication.SignOut();
+        Response.Redirect("Login.aspx");
+
     }
 }
