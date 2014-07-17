@@ -7,7 +7,7 @@
     <title>Update Question</title>
     <style type="text/css">
     #divCenter {
-	background-color:#81DAF5;
+	background-color:#FFD700;
     }
 </style>
 
@@ -32,22 +32,22 @@
                 
             </tr>
         </table>
-        <asp:TextBox ID="txtQuestion" runat="server" TextMode="MultiLine" ToolTip="Update with a new value" Width="800px" length="300px"></asp:TextBox>
+        <asp:TextBox ID="txtQuestion" runat="server" TextMode="MultiLine" ToolTip="Update with a new Question value" Width="800px" length="500px"></asp:TextBox>
         <br />
         <br />
-        <asp:TextBox ID="txtOption1" runat="server" TextMode="MultiLine"></asp:TextBox>
-        <br />
-        <br />
-        <br />
-        <asp:TextBox ID="txtOption2" runat="server" TextMode="MultiLine"></asp:TextBox>
+        <asp:TextBox ID="txtOption1" runat="server" TextMode="MultiLine" ToolTip="Update with a new Option1 value" Width="800px" length="500px"></asp:TextBox>
         <br />
         <br />
         <br />
-        <asp:TextBox ID="txtOption3" runat="server" TextMode="MultiLine"></asp:TextBox>
+        <asp:TextBox ID="txtOption2" runat="server" TextMode="MultiLine" ToolTip="Update with a new Option2 value" Width="800px" length="500px"></asp:TextBox>
         <br />
         <br />
         <br />
-        <asp:TextBox ID="txtOption4" runat="server" TextMode="MultiLine"></asp:TextBox>
+        <asp:TextBox ID="txtOption3" runat="server" TextMode="MultiLine" ToolTip="Update with a new Option3 value" Width="800px" length="500px"></asp:TextBox>
+        <br />
+        <br />
+        <br />
+        <asp:TextBox ID="txtOption4" runat="server" TextMode="MultiLine" ToolTip="Update with a new Option4 value" Width="800px" length="500px"></asp:TextBox>
         <br />
     </div>
 
