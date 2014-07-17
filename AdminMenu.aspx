@@ -20,8 +20,10 @@
 <body>
     <form id="form1" runat="server">
     <div id="divCenter">
-        <asp:Button ID="btnUsers" runat="server" Text="Users" OnClick="btnUsers_Click"/>
-        <asp:Button ID="btnQuestions" runat="server" Text="Questions" OnClick="btnQuestions_Click"/>
+        <p>Welcome Admin !!</p>
+        <asp:Button ID="btnUsers" runat="server" Text="Manage Users" OnClick="btnUsers_Click"/>
+        <asp:Button ID="btnQuestions" runat="server" Text="Manage Questions" OnClick="btnQuestions_Click"/>
+        <asp:Button ID="btnSignout" runat="server" Text="Signout" OnClick="btnSignout_Click"/>
     </div>
     </form>
 </body>
