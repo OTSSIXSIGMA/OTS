@@ -14,14 +14,17 @@
     margin-left: -50px;
     width: 100px;
     height: 100px;
+    font-weight : bold;
+    color: #0000CD;
+    font-size : 16px;
 }
 </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div id="divCenter">
-        <asp:Button ID="btnUsers" runat="server" Text="Users" OnClick="btnUsers_Click"/>
-        <asp:Button ID="btnTests" runat="server" Text="Tests" OnClick="btnTests_Click"/>
+        <asp:Button ID="btnUsers" runat="server" Text="Manage Users" OnClick="btnUsers_Click"/>
+        <asp:Button ID="btnTests" runat="server" Text="Manage Tests" OnClick="btnTests_Click"/>
 
     </div>
     </form>
