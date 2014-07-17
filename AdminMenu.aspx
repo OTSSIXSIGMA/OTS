@@ -7,7 +7,7 @@
     <title>Admin Menu</title>
     <style type="text/css">
 #divCenter {
-    position: absolute;
+	position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -50px;
@@ -21,8 +21,7 @@
     <form id="form1" runat="server">
     <div id="divCenter">
         <asp:Button ID="btnUsers" runat="server" Text="Users" OnClick="btnUsers_Click"/>
-        <asp:Button ID="btnTests" runat="server" Text="Tests" OnClick="btnTests_Click"/>
-
+        <asp:Button ID="btnQuestions" runat="server" Text="Questions" OnClick="btnQuestions_Click"/>
     </div>
     </form>
 </body>
