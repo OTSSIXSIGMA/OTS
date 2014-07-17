@@ -52,6 +52,7 @@
     </div>
 
         <asp:Button ID="btnUodate" runat="server" Text="Save" OnClick="btnUodate_Click" />
+        <asp:Button ID="btnMenu" runat="server" Text="Return to Admin menu" OnClick="btnMenu_Click" />
     </form>
 </body>
 </html>
