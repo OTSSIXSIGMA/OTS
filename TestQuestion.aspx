@@ -16,6 +16,9 @@
     margin-left: -50px;
     width: 1000px;
     height: 1000px;
+    font-size : 14px;
+    font-family : Calibri;
+    color :  #0000CD;
 }
 
 
