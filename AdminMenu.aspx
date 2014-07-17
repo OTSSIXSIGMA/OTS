@@ -12,7 +12,7 @@
     left: 50%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 200px;
+    width: 150px;
     height: 100px;
     font-weight: bold;
     font-size : 16px;
