@@ -23,9 +23,11 @@
 <body>
     <form id="form1" runat="server">
     <div id="divCenter">
-        <asp:Button ID="btnUsers" runat="server" Text="Manage Users" OnClick="btnUsers_Click"/>
-        <asp:Button ID="btnTests" runat="server" Text="Manage Tests" OnClick="btnTests_Click"/>
-
+    <p>Welcome Admin !!</p>
+    
+        <asp:Button ID="btnUsers" runat="server" ForeColor="SeaGreen"  Text="BackColor LightCoral"  Font-Bold="true"  Text="Manage Users" OnClick="btnUsers_Click"/>
+        <asp:Button ID="btnTests" runat="server" ForeColor="SeaGreen"  Text="BackColor LightCoral"  Font-Bold="true"  Text="Manage Tests" OnClick="btnTests_Click"/>
+        <asp:Button ID="btnSignout" runat="server" ForeColor="SeaGreen"  Text="BackColor LightCoral"  Font-Bold="true"  Text="Signout" OnClick="btnSignout_Click"/>
     </div>
     </form>
 </body>
