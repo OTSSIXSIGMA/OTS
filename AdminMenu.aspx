@@ -25,9 +25,9 @@
     <div id="divCenter">
     <p>Welcome Admin !!</p>
     
-        <asp:Button ID="btnUsers" runat="server" ForeColor="SeaGreen"  Text="BackColor LightCoral"  Font-Bold="true"  Text="Manage Users" OnClick="btnUsers_Click"/>
-        <asp:Button ID="btnTests" runat="server" ForeColor="SeaGreen"  Text="BackColor LightCoral"  Font-Bold="true"  Text="Manage Tests" OnClick="btnTests_Click"/>
-        <asp:Button ID="btnSignout" runat="server" ForeColor="SeaGreen"  Text="BackColor LightCoral"  Font-Bold="true"  Text="Signout" OnClick="btnSignout_Click"/>
+        <asp:Button ID="btnUsers" runat="server" ForeColor="SeaGreen"  Font-Bold="true"  Text="Manage Users" OnClick="btnUsers_Click"/>
+        <asp:Button ID="btnTests" runat="server" ForeColor="SeaGreen"  Font-Bold="true"  Text="Manage Tests" OnClick="btnTests_Click"/>
+        <asp:Button ID="btnSignout" runat="server" ForeColor="SeaGreen"  Font-Bold="true"  Text="Signout" OnClick="btnSignout_Click"/>
     </div>
     </form>
 </body>
