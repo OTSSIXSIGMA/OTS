@@ -20,29 +20,30 @@ public partial class Reporting : System.Web.UI.Page
         catch (Exception ex)
         { }
         List<OnlineTrainingBL.Report> report = new List<OnlineTrainingBL.Report>();
-        int QuestionCount=0;
-        foreach (Question question in ((List<Question>)Session["Questions"]).FindAll(x=> x.ID > 0))
+        int QuestionCount = 0;
+        foreach (Question question in ((List<Question>)Session["Questions"]).FindAll(x => x.ID > 0))
         {
-            if(!string.IsNullOrEmpty( question.SelectedList))
+            if (!string.IsNullOrEmpty(question.SelectedList))
             {
                 QuestionCount++;
-               List<String> OptionsOrder = new List<String>(question.SelectedList.Split(','));
-               string OptionChosen = question.OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).DisplayID;
-               string OptionCorrect = question.OptionList.Find(q => q.isAnswer == true).DisplayID;
-               int numberCorrect = 0;
-               foreach (Question quelocal in ((List<Question>)Session["Questions"]).FindAll(x=>x.ID > 0).GetRange(0,QuestionCount))
-               {
-                   List<String> Options = new List<String>(quelocal.SelectedList.Split(','));
-                   string Chosen = quelocal.OptionList.Find(q => q.ID == Convert.ToInt16(Options.ElementAt(OptionsOrder.Count - 1))).Value.Replace("[", "").Replace("]", "");
-                   string Correct = quelocal.OptionList.Find(q => q.isAnswer == true).Value.Replace("[", "").Replace("]", "");
-                   if (Chosen == Correct)
-                   {
-                       numberCorrect++;
-                   }
-               }
+                string[] s = question.SelectedList.Split(',');
+                List<String> OptionsOrder = s.ToList();
+                string OptionChosen = question.OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).DisplayID;
+                string OptionCorrect = question.OptionList.Find(q => q.isAnswer == true).DisplayID;
+                int numberCorrect = 0;
+                foreach (Question quelocal in ((List<Question>)Session["Questions"]).FindAll(x => x.ID > 0).GetRange(0, QuestionCount))
+                {
+                    List<String> Options = quelocal.SelectedList.Split(',').ToList();
+                    string Chosen = quelocal.OptionList.Find(q => q.ID == Convert.ToInt16(Options.ElementAt(Options.Count - 1))).Value.Replace("[", "").Replace("]", "");
+                    string Correct = quelocal.OptionList.Find(q => q.isAnswer == true).Value.Replace("[", "").Replace("]", "");
+                    if (Chosen == Correct)
+                    {
+                        numberCorrect++;
+                    }
+                }
 
-               Report tmpReport = new Report(question.DisplayID.ToString(), OptionChosen, OptionCorrect, (OptionChosen == OptionCorrect) ? "Correct" : "Wrong", ((double)numberCorrect / QuestionCount) * 100);
-               report.Add(tmpReport);
+                Report tmpReport = new Report(question.DisplayID.ToString(), OptionChosen, OptionCorrect, (OptionChosen == OptionCorrect) ? "Correct" : "Wrong", ((double)numberCorrect / QuestionCount) * 100);
+                report.Add(tmpReport);
             }
         }
 
