@@ -17,8 +17,8 @@
     left: 20%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 300px;
-    height: 300px;
+    width: 1000px;
+    height: 1000px;
 }
 </style>
 </head>
