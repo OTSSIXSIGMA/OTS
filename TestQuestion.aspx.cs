@@ -79,7 +79,7 @@ public partial class TestQuestion : System.Web.UI.Page
                 foreach (string match in matches)
                 {
                     string wildcard = "[" + match + "]";
-                    lblQuestion.Text = lblQuestion.Text.Replace(wildcard, "<a href='Description.aspx?name=" + match + "' rel=shadowbox;height=700;width=700>" + match + "</a>");
+                    lblQuestion.Text = lblQuestion.Text.Replace(wildcard, "<a href='Description.aspx?name=" + match + "' height=700;width=700>" + match + "</a>");
                 }
 
                 foreach (Option option in question.OptionList)
@@ -95,7 +95,7 @@ public partial class TestQuestion : System.Web.UI.Page
                     foreach (string match in matches)
                     {
                         string wildcard = "[" + match + "]";
-                        tmpItem.Text = tmpItem.Text.Replace(wildcard, "<a href='Description.aspx?name=" + match + "' rel=shadowbox;height=700;width=700>" + match + "</a>");
+                        tmpItem.Text = tmpItem.Text.Replace(wildcard, "<a href='Description.aspx?name=" + match + "' height=700;width=700>" + match + "</a>");
                     }
                     rblOptions.Items.Add(tmpItem);
                 }
