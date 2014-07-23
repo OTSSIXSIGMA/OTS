@@ -9,16 +9,13 @@
 
     <style type="text/css">
 #divCenter {
-    position: absolute;
-    top: 20%;
-    left: 20%;
+	position: absolute;
+    top: 45%;
+    left: 40%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 1000px;
-    height: 1000px;
-    font-size : 16px;
-    font-family : Calibri;
-    color :  #0000CD;
+    width: 500px;
+    height: 500px;
 }
 
 

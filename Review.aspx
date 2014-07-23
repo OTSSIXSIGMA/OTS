@@ -9,15 +9,11 @@
     #divCenter {
     position: absolute;
     top: 45%;
-    left: 20%;
+    left: 40%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 1000px;
-    height: 1000px;
-    font-size : 16px;
-    font-family : Calibri;
-    font-weight : bold;
-    color : #660000;
+    width: 500px;
+    height: 100px;
     }
     </style>
      <script type="text/javascript" src="Resources/js/jquery-1.7.2.min.js"></script>

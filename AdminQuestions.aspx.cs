@@ -34,5 +34,4 @@ public partial class AdminQuestions : System.Web.UI.Page
         string ID = grdQuestions.DataKeys[e.NewEditIndex].Value.ToString();
         Response.Redirect("UpdateQuestion.aspx?ID=" + ID);
     }
-   
 }
