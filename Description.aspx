@@ -13,12 +13,12 @@
     <style type="text/css">
 #divCenter {
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 35%;
+    left: 30%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 100px;
 }
 </style>
 </head>
@@ -33,6 +33,7 @@
         <br />
          <asp:Button ID="btnPrint" runat="server" Text="Print" OnClientClick="javascript:PrintPage();" />
         <%--<asp:Button ID="btnReturn" runat="server" Text="Return to Question" OnClick="btnReturn_Click" />--%>
+        <asp:Button ID="btnReturnQuestion" runat="server" Text="Go back to Question" OnClick="btnReturn_Click"/>
     </div>
     </form>
 </body>

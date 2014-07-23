@@ -42,7 +42,7 @@ public partial class TestQuestion : System.Web.UI.Page
                         QuestionID = ((List<Question>)(Session["Questions"])).ElementAt(0).ID;
                     }
                 }
-                else if ((Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("testquestion.aspx")))
+                else if ((Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("testquestion.aspx")) || (Request.UrlReferrer.OriginalString.ToString().ToLower().Contains("description.aspx")))
                 {
                     QuestionID = ((Question)Session["Question"]).ID;
                 }
