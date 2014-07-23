@@ -17,8 +17,13 @@
     left: 30%;
     margin-top: -50px;
     margin-left: -50px;
+<<<<<<< HEAD
     width: 400px;
     height: 100px;
+=======
+    width: 1000px;
+    height: 1000px;
+>>>>>>> origin/master
 }
 </style>
 </head>
