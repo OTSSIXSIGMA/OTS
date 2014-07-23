@@ -80,4 +80,9 @@ public partial class UpdateQuestion : System.Web.UI.Page
         //cmd.ExecuteNonQuery();
         //connection.Close();
     }
+    
+    protected void btnMenu_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("AdminMenu.aspx");
+    }
 }
