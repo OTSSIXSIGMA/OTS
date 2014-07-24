@@ -23,6 +23,7 @@
     <div id="divCenter">
     <asp:Button ID="btnStartTest" runat="server" Text="Start Test" OnClick="btnStartTest_Click"></asp:Button>
         <asp:Button ID="btnContinue" runat="server" Text="Continue Test" OnClick="btnContinue_Click" Visible="false" />
+        <asp:Button ID="btnReturn" runat ="server" Text="Return" OnClick="btnReturn_Click" />
         <asp:Button ID="btnSignout" runat="server" Text="Signout" OnClick="btnSignout_Click"/>
     </div>
     </form>

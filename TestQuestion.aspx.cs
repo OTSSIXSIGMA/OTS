@@ -57,6 +57,17 @@ public partial class TestQuestion : System.Web.UI.Page
             if (question.ID < 0)
             {
                 lblQuestion.Text = question.Value;
+                lblQuestion.Text = question.DisplayID + ". " + question.Value;
+                ICollection<string> matches =
+                Regex.Matches(question.Value.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
+               .Cast<Match>()
+               .Select(x => x.Groups[1].Value)
+               .ToList();
+                foreach (string match in matches)
+                {
+                    string wildcard = "[" + match + "]";
+                    lblQuestion.Text = lblQuestion.Text.Replace(wildcard, "<a href='Description.aspx?name=" + match + "' height=700;width=700>" + match + "</a>");
+                }
                 ListItem tmpItem = new ListItem("","");
                 rblOptions.Items.Add(tmpItem);
                 rblOptions.SelectedIndex = 0; ;
@@ -70,8 +81,20 @@ public partial class TestQuestion : System.Web.UI.Page
 
             else
             {
-                lblQuestion.Text = question.DisplayID + ". " + question.Value;
+                lblPreface.Text = question.DisplayID + ". " + question.Preface;
                 ICollection<string> matches =
+               Regex.Matches(question.Preface.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
+              .Cast<Match>()
+              .Select(x => x.Groups[1].Value)
+              .ToList();
+                foreach (string match in matches)
+                {
+                    string wildcard = "[" + match + "]";
+                    lblPreface.Text = lblPreface.Text.Replace(wildcard, "<a href='Description.aspx?name=" + match + "' height=700;width=700>" + match + "</a>");
+                }
+
+                lblQuestion.Text = question.Value;
+                matches =
                 Regex.Matches(question.Value.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
                .Cast<Match>()
                .Select(x => x.Groups[1].Value)
@@ -81,7 +104,7 @@ public partial class TestQuestion : System.Web.UI.Page
                     string wildcard = "[" + match + "]";
                     lblQuestion.Text = lblQuestion.Text.Replace(wildcard, "<a href='Description.aspx?name=" + match + "' height=700;width=700>" + match + "</a>");
                 }
-
+                
                 foreach (Option option in question.OptionList)
                 {
                     ListItem tmpItem = new ListItem(option.ID.ToString(), option.Value);
@@ -206,6 +229,6 @@ public partial class TestQuestion : System.Web.UI.Page
     }
     protected void btnMenu_Click(object sender, EventArgs e)
     {
-        Response.Redirect("StudentMenu.aspx");
+        Response.Redirect("StudentMenu.aspx?TestID=" + ((List<Question>)(Session["Questions"])).ElementAt(0).TestID.ToString());
     }
 }
