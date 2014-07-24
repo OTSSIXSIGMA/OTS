@@ -229,6 +229,6 @@ public partial class TestQuestion : System.Web.UI.Page
     }
     protected void btnMenu_Click(object sender, EventArgs e)
     {
-        Response.Redirect("StudentMenu.aspx?TestID=" + ((List<Question>)(Session["Questions"])).ElementAt(0).TestID.ToString());
+        Response.Redirect("StudentMenu.aspx?TestID=" + ((List<Question>)(Session["Questions"])).Find(x=>x.ID>0).TestID.ToString());
     }
 }
