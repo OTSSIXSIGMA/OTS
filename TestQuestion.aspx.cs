@@ -57,7 +57,6 @@ public partial class TestQuestion : System.Web.UI.Page
             if (question.ID < 0)
             {
                 lblQuestion.Text = question.Value;
-                lblQuestion.Text = question.DisplayID + ". " + question.Value;
                 ICollection<string> matches =
                 Regex.Matches(question.Value.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
                .Cast<Match>()
