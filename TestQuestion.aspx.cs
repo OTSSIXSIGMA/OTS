@@ -53,9 +53,11 @@ public partial class TestQuestion : System.Web.UI.Page
             }
 
                 question = ((List<Question>)Session["Questions"]).Find(q => q.ID == QuestionID);
+                question.Value= "<b>"+question.Value+"</b>";
 
             if (question.ID < 0)
             {
+                
                 lblQuestion.Text = question.Value;
                 ICollection<string> matches =
                 Regex.Matches(question.Value.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
