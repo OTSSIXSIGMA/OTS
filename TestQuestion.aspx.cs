@@ -53,7 +53,7 @@ public partial class TestQuestion : System.Web.UI.Page
             }
 
                 question = ((List<Question>)Session["Questions"]).Find(q => q.ID == QuestionID);
-                question.Value= "<b>"+question.Value+"</b>";
+                //question.Value= "<b>"+question.Value+"</b>";
 
             if (question.ID < 0)
             {
