@@ -21,6 +21,7 @@
     color :  #0000CD;
 }
 p.big {line-height:250%;}
+p.small {line-height:120%;}
 
 </style>
 
@@ -44,6 +45,7 @@ p.big {line-height:250%;}
         <asp:Label ID="lblQuestion" runat="server"></asp:Label>
         </b>
         </p>
+        <p class="small">
         <asp:UpdatePanel ID="uppOptions" runat="server" UpdateMode="Always"> 
             <ContentTemplate>
         <asp:Panel ID="pnlRadioBtn" runat="server">
@@ -55,6 +57,7 @@ p.big {line-height:250%;}
             ErrorMessage="Select an option"  
             ValidationGroup="options"
             >  
+            </p>
         </asp:RequiredFieldValidator>  
         </asp:Panel>            
         </ContentTemplate>
