@@ -35,19 +35,11 @@
     <form id="form1" runat="server">
         <asp:scriptmanager ID="Scriptmanager1" runat="server"></asp:scriptmanager>
     <div id="divCenter">
-       <table>
-       <tr>
-       <td>
+
         <asp:HiddenField ID="hddQuestionID" runat="server" />
-       </td>
-       <td>
         <asp:Label ID="lblPreface" runat="server"></asp:Label>
-        
+        <br />
         <asp:Label ID="lblQuestion" runat="server"></asp:Label>
-      </td>
-      </tr>
-      <tr>
-      <td>
         <asp:UpdatePanel ID="uppOptions" runat="server" UpdateMode="Always"> 
             <ContentTemplate>
         <asp:Panel ID="pnlRadioBtn" runat="server">
@@ -63,19 +55,12 @@
         </asp:Panel>            
         </ContentTemplate>
         </asp:UpdatePanel>
-        </td>
-        </tr>
-        </table>
-        <table>
-        <tr>
         <asp:Button ID ="btnPrevious" runat ="server" Text="Previous" OnClick="btnPrevious_Click"/>
         <asp:Button ID="btnSubmit" runat="server" Text="Next" OnClick="btnSubmit_Click" ValidationGroup="options"  CausesValidation="true" />
         <asp:Button ID="btnMenu" runat="server" Text="Return to main menu" OnClick="btnMenu_Click" />
-        </tr>
-        <tr>
+        
         <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
-        </tr>
-        </table>
+
     </div>
     </form>
 </body>
