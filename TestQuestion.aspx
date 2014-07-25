@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TestQuestion.aspx.cs" Inherits="TestQuestion" ValidateRequest="false"  %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TestQuestion.aspx.cs" Inherits="TestQuestion" ValidateRequest="false"  %>
 
 <!DOCTYPE html>
 
@@ -35,25 +35,15 @@
     <form id="form1" runat="server">
         <asp:scriptmanager ID="Scriptmanager1" runat="server"></asp:scriptmanager>
     <div id="divCenter">
-<table>
-    <tr>
-        <td>
+
         <asp:HiddenField ID="hddQuestionID" runat="server" />
-        </td>
-        <td>
         <asp:Label ID="lblPreface" runat="server"></asp:Label>
         <br />
         <asp:Label ID="lblQuestion" runat="server"></asp:Label>
-        </td>
-    </tr>    
-    <tr>
         <asp:UpdatePanel ID="uppOptions" runat="server" UpdateMode="Always"> 
             <ContentTemplate>
-        <td>    
         <asp:Panel ID="pnlRadioBtn" runat="server">
-                <asp:RadioButtonList ID="rblOptions" runat="server" RepeatColumns="1" RepeatDirection="Vertical" RepeatLayout="table" ValidationGroup="options" Width="90%" OnSelectedIndexChanged="rblOptions_SelectedIndexChanged"  AutoPostBack="true"></asp:RadioButtonList> 
-        </td>   
-        </tr>  
+                <asp:RadioButtonList ID="rblOptions" runat="server" RepeatColumns="1" RepeatDirection="Vertical" ValidationGroup="options" Width="90%" OnSelectedIndexChanged="rblOptions_SelectedIndexChanged"  AutoPostBack="true"></asp:RadioButtonList>      
             <asp:RequiredFieldValidator   
             ID="RqdOptions"  
             runat="server"  
