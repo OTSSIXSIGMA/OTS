@@ -38,7 +38,7 @@
 
         <asp:HiddenField ID="hddQuestionID" runat="server" />
         <asp:Label ID="lblPreface" runat="server"></asp:Label>
-        <br />
+        
         <asp:Label ID="lblQuestion" runat="server"></asp:Label>
         <asp:UpdatePanel ID="uppOptions" runat="server" UpdateMode="Always"> 
             <ContentTemplate>
