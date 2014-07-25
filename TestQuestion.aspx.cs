@@ -80,19 +80,24 @@ public partial class TestQuestion : System.Web.UI.Page
 
             else
             {
-                lblPreface.Text = question.DisplayID + ". " + question.Preface;
-                ICollection<string> matches =
-               Regex.Matches(question.Preface.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
-              .Cast<Match>()
-              .Select(x => x.Groups[1].Value)
-              .ToList();
-                foreach (string match in matches)
+                ICollection<string> matches;
+                if (!string.IsNullOrEmpty(question.Preface))
                 {
-                    string wildcard = "[" + match + "]";
-                    lblPreface.Text = lblPreface.Text.Replace(wildcard, "<a href='Description.aspx?name=" + match + "' height=700;width=700>" + match + "</a>");
+                    lblPreface.Text = question.DisplayID + ". " + question.Preface;
+                    matches =
+                   Regex.Matches(question.Preface.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
+                  .Cast<Match>()
+                  .Select(x => x.Groups[1].Value)
+                  .ToList();
+                    foreach (string match in matches)
+                    {
+                        string wildcard = "[" + match + "]";
+                        lblPreface.Text = lblPreface.Text.Replace(wildcard, "<a href='Description.aspx?name=" + match + "' height=700;width=700>" + match + "</a>");
+                    }
+                    lblQuestion.Text = question.Value;
                 }
-
-                lblQuestion.Text = question.Value;
+                else { lblPreface.Visible = false; lblQuestion.Text = question.DisplayID + ". " + question.Value; }
+                
                 matches =
                 Regex.Matches(question.Value.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
                .Cast<Match>()
