@@ -20,7 +20,7 @@
     font-family : Calibri;
     color :  #0000CD;
 }
-
+p.big {line-height:200%;}
 
 </style>
 
@@ -37,9 +37,11 @@
     <div id="divCenter">
 
         <asp:HiddenField ID="hddQuestionID" runat="server" />
+        <p class="big">
         <asp:Label ID="lblPreface" runat="server"></asp:Label>
-        <br />
+        
         <asp:Label ID="lblQuestion" runat="server"></asp:Label>
+        </p>
         <asp:UpdatePanel ID="uppOptions" runat="server" UpdateMode="Always"> 
             <ContentTemplate>
         <asp:Panel ID="pnlRadioBtn" runat="server">
