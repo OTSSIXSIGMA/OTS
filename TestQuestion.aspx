@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title>Test Question</title>
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 
@@ -57,9 +57,8 @@ p.small {line-height:150%;}
         <b>
         <asp:Label ID="lblQuestion" runat="server"></asp:Label>
             </b>
-            <br />
         </p>
-        <p class="small">
+        <p class="small">   
         <asp:UpdatePanel ID="uppOptions" runat="server" UpdateMode="Always"> 
             <ContentTemplate>
         <asp:Panel ID="pnlRadioBtn" runat="server">
@@ -71,11 +70,13 @@ p.small {line-height:150%;}
             ErrorMessage="Select an option"  
             ValidationGroup="options"
             >  
-                </p>
+                
         </asp:RequiredFieldValidator>  
+            
         </asp:Panel>            
         </ContentTemplate>
         </asp:UpdatePanel>
+            </p>
         <asp:Button ID ="btnPrevious" runat ="server" Text="Previous" OnClick="btnPrevious_Click"/>
         <asp:Button ID="btnSubmit" runat="server" Text="Next" OnClick="btnSubmit_Click" ValidationGroup="options"  CausesValidation="true" />
         <asp:Button ID="btnMenu" runat="server" Text="Return to main menu" OnClick="btnMenu_Click" />
