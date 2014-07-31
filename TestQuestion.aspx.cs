@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -53,11 +53,9 @@ public partial class TestQuestion : System.Web.UI.Page
             }
 
                 question = ((List<Question>)Session["Questions"]).Find(q => q.ID == QuestionID);
-                //question.Value= "<b>"+question.Value+"</b>";
 
             if (question.ID < 0)
             {
-                
                 lblQuestion.Text = question.Value;
                 ICollection<string> matches =
                 Regex.Matches(question.Value.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
@@ -86,6 +84,8 @@ public partial class TestQuestion : System.Web.UI.Page
                 if (!string.IsNullOrEmpty(question.Preface))
                 {
                     lblPreface.Text = question.DisplayID + ". " + question.Preface;
+                    if (!lblPreface.Text.EndsWith("</p>"))
+                    { lblPreface.Text = lblPreface.Text + "</br>"; }
                     matches =
                    Regex.Matches(question.Preface.Replace(Environment.NewLine, ""), @"\[([^]]*)\]")
                   .Cast<Match>()
