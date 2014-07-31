@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Reporting.aspx.cs" Inherits="Reporting" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Reporting.aspx.cs" Inherits="Reporting" %>
 
 <!DOCTYPE html>
 
@@ -14,12 +14,21 @@
     margin-left: -50px;
     width: 100px;
     height: 100px;
+    font-size : 16px;
+            font-family : Calibri;
+            color :  #0000CD;
     }
+     body {
+            background-image:url('Resources/images/loginbackground.png');
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            }
     </style>
      <script type="text/javascript">
          function PrintPage() {
              window.print();
          }
+
 </script>
 </head>
 <body>
@@ -28,7 +37,7 @@
         <asp:Label ID="lblReport" runat="server" ></asp:Label>
         <asp:GridView ID="gdvReport" runat="server" AutoGenerateColumns="false">
             <Columns>   
-               <asp:BoundField DataField="Question" HeaderText="Question">
+               <asp:BoundField DataField="Question" HeaderText="Question" >
                <ItemStyle HorizontalAlign="Center" />
                </asp:BoundField>
             <asp:BoundField DataField="Choice" HeaderText="Choice">
