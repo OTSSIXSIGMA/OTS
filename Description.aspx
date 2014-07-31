@@ -31,11 +31,7 @@
     <div id="divCenter">
         <asp:Label ID ="lblDescription" runat ="server"/>
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-         <asp:Button ID="btnPrint" runat="server" Text="Print" OnClientClick="javascript:PrintPage();" />
+        <asp:Button ID="btnPrint" runat="server" Text="Print" BackColor="#82A8CD" ForeColor="#000000" OnClientClick="javascript:PrintPage();" />
         <%--<asp:Button ID="btnReturn" runat="server" Text="Return to Question" OnClick="btnReturn_Click" />--%>
         <asp:Button ID="btnReturnQuestion" runat="server" Text="Go back to Question" OnClick="btnReturn_Click"/>
     </div>
