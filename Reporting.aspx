@@ -9,9 +9,9 @@
     #divCenter {
     position: absolute;
     top: 45%;
-    left: 40%;
+    left: 30%;
     margin-top: -50px;
-    margin-left: -50px;
+    margin-left: -70px;
     width: 100px;
     height: 100px;
     font-size : 16px;
