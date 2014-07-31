@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Description.aspx.cs" Inherits="Description" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Description.aspx.cs" Inherits="Description" %>
 
 <!DOCTYPE html>
 
@@ -11,20 +11,19 @@
              }
 </script>
     <style type="text/css">
-#divCenter {
-    position: absolute;
-    top: 35%;
-    left: 30%;
-    margin-top: -50px;
-    margin-left: -50px;
-<<<<<<< HEAD
-    width: 400px;
-    height: 100px;
-=======
-    width: 1000px;
-    height: 1000px;
->>>>>>> origin/master
-}
+    #divCenter 
+            {
+            position: absolute;
+            top: 40%;
+            left: 20%;
+            margin-top: -250px;
+            margin-left: -50px;
+            width: 500px;
+            height: 500px;
+            font-size : 16px;
+            font-family : Calibri;
+            color :  #0000CD;
+            }
 </style>
 </head>
 <body>
