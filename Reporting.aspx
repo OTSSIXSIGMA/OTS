@@ -18,11 +18,7 @@
             font-family : Calibri;
             color :  #0000CD;
     }
-     body {
-            background-image:url('Resources/images/loginbackground.png');
-            background-repeat:no-repeat;
-            background-attachment:fixed;
-            }
+  
     </style>
      <script type="text/javascript">
          function PrintPage() {
