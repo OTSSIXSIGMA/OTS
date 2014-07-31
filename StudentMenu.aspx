@@ -6,6 +6,11 @@
 <head runat="server">
     <title>Student Menu</title>
 <style type="text/css">
+   body {
+            background-image:url('Resources/images/loginbackground.png');
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            }
 #divCenter {
 	position: absolute;
     top: 50%;
