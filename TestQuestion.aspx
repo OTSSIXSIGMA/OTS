@@ -8,20 +8,34 @@
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 
     <style type="text/css">
+        body {
+            background-image:url('Resources/images/loginbackground.png');
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            }
+
 #divCenter {
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 40%;
+    left: 22%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 1000px;
-    height: 1000px;
     font-size : 16px;
     font-family : Calibri;
     color :  #0000CD;
-}
-p.big {line-height:250%;}
-p.small {line-height:120%;}
+    }
+p.big {line-height:200%;}
+p.small {line-height:150%;}
+   table.mylist input {
+      width: 20px;
+      display: block;
+      float: left;
+   }
+   table.mylist label {
+      width: 90%;
+      display: block;
+      float: left;
+   }
 
 </style>
 
@@ -40,16 +54,16 @@ p.small {line-height:120%;}
         <asp:HiddenField ID="hddQuestionID" runat="server" />
         <p class="big">
         <asp:Label ID="lblPreface" runat="server"></asp:Label>
-        <br/>
         <b>
         <asp:Label ID="lblQuestion" runat="server"></asp:Label>
-        </b>
+            </b>
+            <br />
         </p>
         <p class="small">
         <asp:UpdatePanel ID="uppOptions" runat="server" UpdateMode="Always"> 
             <ContentTemplate>
         <asp:Panel ID="pnlRadioBtn" runat="server">
-                <asp:RadioButtonList ID="rblOptions" runat="server" RepeatColumns="1" RepeatDirection="Vertical" ValidationGroup="options" Width="90%" OnSelectedIndexChanged="rblOptions_SelectedIndexChanged"  AutoPostBack="true"></asp:RadioButtonList>      
+                <asp:RadioButtonList ID="rblOptions" runat="server" CssClass="mylist" RepeatColumns="1" RepeatDirection="Vertical" ValidationGroup="options" Width="90%" OnSelectedIndexChanged="rblOptions_SelectedIndexChanged"  AutoPostBack="true"></asp:RadioButtonList>      
             <asp:RequiredFieldValidator   
             ID="RqdOptions"  
             runat="server"  
@@ -57,7 +71,7 @@ p.small {line-height:120%;}
             ErrorMessage="Select an option"  
             ValidationGroup="options"
             >  
-            </p>
+                </p>
         </asp:RequiredFieldValidator>  
         </asp:Panel>            
         </ContentTemplate>
@@ -65,7 +79,7 @@ p.small {line-height:120%;}
         <asp:Button ID ="btnPrevious" runat ="server" Text="Previous" OnClick="btnPrevious_Click"/>
         <asp:Button ID="btnSubmit" runat="server" Text="Next" OnClick="btnSubmit_Click" ValidationGroup="options"  CausesValidation="true" />
         <asp:Button ID="btnMenu" runat="server" Text="Return to main menu" OnClick="btnMenu_Click" />
-        
+        <br />
         <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
 
     </div>
