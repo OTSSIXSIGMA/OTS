@@ -6,6 +6,11 @@
 <head runat="server">
     <title>Review</title>
     <style type="text/css">
+            body {
+            background-image:url('Resources/images/loginbackground.png');
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            }
     #divCenter {
     position: absolute;
     top: 45%;
@@ -17,7 +22,7 @@
     font-size : 16px;
     font-family : Calibri;
     font-weight : bold;
-    color : #660000;
+    color : #244C95;
     }
     </style>
      <script type="text/javascript" src="Resources/js/jquery-1.7.2.min.js"></script>
