@@ -35,7 +35,12 @@
     <form id="form1" runat="server">
     <div id="divCenter">
         <asp:Label ID="lblReport" runat="server" ></asp:Label>
-        <asp:GridView ID="gdvReport" runat="server" AutoGenerateColumns="false">
+             <asp:GridView ID="gdvReport" runat="server" AutoGenerateColumns="false" BorderWidth="1px" BackColor="#E2EBF2"
+            CellPadding="5" CellSpacing="2" BorderStyle="Double" BorderColor="#301793" SkinID="Professional" Font-Name="Calibri"
+            Font-Size="14pt"
+            HeaderStyle-BackColor="#444444"
+            HeaderStyle-ForeColor="White"
+            AlternatingRowStyle-BackColor="#dddddd" Width="200" Height="200">
             <Columns>   
                <asp:BoundField DataField="Question" HeaderText="Question" >
                <ItemStyle HorizontalAlign="Center" />
