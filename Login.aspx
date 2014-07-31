@@ -1,86 +1,102 @@
-﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
-
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"/>
-<html>
-<head id="Head1" runat="server">
-  <title>Login Page</title>
-<style type="text/css">
-#divCenter {
-    position: absolute;
-    top: 45%;
-    left: 40%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width: 100px;
-    height: 100px;
-}
-
-#HeadingCenter {
-    position: absolute;
-    top: 25%;
-    left: 30%;
-    margin-top: -50px;
-    margin-left: 68px;
-    width: 447px;
-    height: 100px;
-}
-</style>
-    
-</head>
-<body>
-  <form id="form1" runat="server">
-    <div id="HeadingCenter" style="color:#0000FF; font-size: 16pt;font-family: tims, cursive, serif;font-weight: bold">
-    <h3>Welcome to Online Training System</h3>
-
-    </div>
-    <div id="divCenter">
-      <h3>
-      Login Page</h3>
-    <table>
-      <tr>
-        <td>
-          Username:</td>
-        <td>
-          <asp:TextBox ID="UserEmail" runat="server"  /></td>
-        <td>
-          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
-            ControlToValidate="UserEmail"
-            Display="Dynamic" 
-            ErrorMessage="Cannot be empty." 
-            runat="server" />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Password:</td>
-        <td>
-          <asp:TextBox ID="UserPass" TextMode="Password" 
-             runat="server" />
-        </td>
-        <td>
-          <asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
-            ControlToValidate="UserPass"
-            ErrorMessage="Cannot be empty." 
-            runat="server" />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Remember me?</td>
-        <td>
-          <asp:CheckBox ID="Persist" runat="server" /></td>
-      </tr>
-    </table>
-    <asp:Button ID="Submit1" OnClick="Logon_Click" Text="Log In" 
-       runat="server" />
-    <p>
-      <asp:Label ID="Msg" ForeColor="red" runat="server" />
-    </p>
-
-
-    </div>
-  </form>
-</body>
-</html>
-
+   <html>
+      <head id="Head1" runat="server">
+         <title>Login Page</title>
+         <style type="text/css">
+            body {
+            background-image:url('Resources/images/loginbackground.png');
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            }
+            #divCenter 
+            {
+            position: absolute;
+            top: 50%;
+            left: 32%;
+            margin-top: -250px;
+            margin-left: -50px;
+            width: 500px;
+            height: 500px;
+            font-size : 16px;
+            font-family : Calibri;
+            color :  #0000CD;
+            }
+            table
+            {
+            border-collapse:separate;
+            border-spacing:2 5px;
+            }
+         </style>
+      </head>
+      <body>
+         <form id="form1" runat="server">
+            <!-- <img src="Resources/images/logo.png" alt="Welcome to Six Sigma Online Training System" align="center" width="1335" height="125">-->
+            <div id="divCenter">
+               <table border="0" width="100%" cellspacing="1" height="100%" id="table1">
+                  <tr>
+                     <td align="center" >
+                        <table border="0" width="400" id="table2">
+                           <tr>
+                              <td width="211">
+                                 <img border="0" src="Resources/images/studenttakingexam.jpg" width="144" height="183">
+                              </td>
+                              <td width="211">
+                                 <table border="0" width="100%" id="table3" style="border: 1px solid #251272">
+                                    <tr>
+                                       <td>
+                                          <table border="0" width="100%" id="table4" cellpadding="2">
+                                             <tr>
+                                                <td align="left" valign="bottom">
+                                                   Username
+                                                </td>
+                                                <td align="left" valign="bottom">
+                                                   <asp:TextBox ID="UserEmail" runat="server" type="text" />
+                                                </td>
+                                                <td>
+                                                   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
+                                                      ControlToValidate="UserEmail"
+                                                      Display="Dynamic" 
+                                                      ErrorMessage="Cannot be EMPTY." 
+                                                      runat="server" />
+                                                </td>
+                                             </tr>
+                                            
+                                             <tr>
+                                                <td align="left" valign="top">
+                                                   Password
+                                                </td>
+                                                <td align="left" valign="top">
+                                                   <asp:TextBox ID="UserPass" TextMode="Password" runat="server" />
+                                                </td>
+                                                <td>
+                                                   <asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
+                                                      ControlToValidate="UserPass"
+                                                      ErrorMessage="Cannot be EMPTY." runat="server" />
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                 <td align="left">
+                                                  Remember me?
+                                                   <asp:CheckBox ID="Persist" runat="server" />
+                                                     </td>
+                                             </tr>
+                                          </table>
+                                          <asp:Button ID="Submit1" OnClick="Logon_Click" Text="Log In" BackColor="#C7D7E6" runat="server" />
+                                          <p>
+                                             <asp:Label ID="Msg" ForeColor="red" runat="server" />
+                                          </p>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                      </td>
+                  </tr>
+               </table>
+            </div>
+         </form>
+      </body>
+   </html>
