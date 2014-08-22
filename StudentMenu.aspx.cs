@@ -21,6 +21,7 @@ public partial class Menu : System.Web.UI.Page
             Session["Questions"] = GetQuestions();
             Session["Descriptions"] = GetDescriptions();
             GetOverviews();
+            GetTestData();
             Session["ResultList"] = null;
             CheckOpenSession();
             if (Session["SessionID"] != null)
@@ -211,5 +212,36 @@ public partial class Menu : System.Web.UI.Page
     protected void btnReturn_Click(object sender, EventArgs e)
     {
         Response.Redirect("StudentTests.aspx");
+    }
+    protected void GetTestData()
+    {
+        #region Declaration
+        SqlDataReader reader;
+        SqlConnection connection;
+        SqlCommand cmd;
+        string connectionstring;
+        List<Question> TestData;
+        Question tmpQuestion;
+        #endregion
+
+        connectionstring = "Server=55eb3ba5-c93f-4d5d-a746-a33d0187f51c.sqlserver.sequelizer.com;Database=db55eb3ba5c93f4d5da746a33d0187f51c;User ID=decjkfdwyfdldmsg;Password=joja5KVaS7pvgVztqJtWcVkv2Y2YyYpuUbbExi4FxeLA6UVjVXkFi5mvdVgfR5H2;";
+        connection = new SqlConnection(connectionstring);
+        cmd = new SqlCommand("tst_GetStartEnd", connection);
+        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.Parameters.AddWithValue("@TestID", Convert.ToInt16(Request.QueryString["TestID"]));
+        connection.Open();
+        reader = cmd.ExecuteReader();
+        TestData = new List<Question>();
+        while (reader.Read())
+        {
+            tmpQuestion = new Question(reader[0].ToString());
+            TestData.Add(tmpQuestion);
+            tmpQuestion = new Question(reader[1].ToString());
+            TestData.Add(tmpQuestion);
+        }
+        reader.Close();
+        connection.Close();
+         ((List<Question>)Session["Questions"]).Insert(0,TestData.ElementAt(0));
+         ((List<Question>)Session["Questions"]).Insert(((List<Question>)Session["Questions"]).Count, TestData.ElementAt(1));
     }
 }
