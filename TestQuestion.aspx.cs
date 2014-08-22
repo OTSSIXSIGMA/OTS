@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -71,7 +71,7 @@ public partial class TestQuestion : System.Web.UI.Page
                 rblOptions.Items.Add(tmpItem);
                 rblOptions.SelectedIndex = 0; ;
                 rblOptions.Visible = false;
-                if (question.ID != -1)
+                if ( ((List<Question>)Session["Questions"]).IndexOf( question) !=0)
                 {
                     btnPrevious.Visible = true;
                 }
