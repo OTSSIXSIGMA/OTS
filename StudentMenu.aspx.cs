@@ -234,9 +234,9 @@ public partial class Menu : System.Web.UI.Page
         TestData = new List<Question>();
         while (reader.Read())
         {
-            tmpQuestion = new Question(reader[0].ToString());
+            tmpQuestion = new Question(12345,reader[0].ToString());
             TestData.Add(tmpQuestion);
-            tmpQuestion = new Question(reader[1].ToString());
+            tmpQuestion = new Question(12346,reader[1].ToString());
             TestData.Add(tmpQuestion);
         }
         reader.Close();
