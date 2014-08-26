@@ -137,22 +137,21 @@ public partial class TestQuestion : System.Web.UI.Page
                     rblOptions.SelectedIndex = rblOptions.Items.IndexOf(rblOptions.Items.FindByValue(question.OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).Value));
                 }
 
+            }
 
-                index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(question.ID));
-                if (index == ((List<Question>)Session["Questions"]).Count - 1)
-                { btnSubmit.Text = "Finish"; }
-                else if (index != 0)
-                { btnPrevious.Visible = true; }
+            index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(question.ID));
+            if (index == ((List<Question>)Session["Questions"]).Count - 1)
+            { btnSubmit.Text = "Finish"; }
+            else if (index != 0)
+            { btnPrevious.Visible = true; }
 
 
-                hddQuestionID.Value = question.ID.ToString();
-                Session["Question"] = question;
+            hddQuestionID.Value = question.ID.ToString();
+            Session["Question"] = question;
 
-                if (((List<Question>)Session["Questions"]).FindIndex(q => q.ID == ((Question)Session["Question"]).ID) == ((List<Question>)Session["Questions"]).Count - 1)
-                {
-                    Session["SessionID"] = Session["SessionID"] + "CLOSED";
-                }
-
+            if (((List<Question>)Session["Questions"]).FindIndex(q => q.ID == ((Question)Session["Question"]).ID) == ((List<Question>)Session["Questions"]).Count - 1)
+            {
+                Session["SessionID"] = Session["SessionID"] + "CLOSED";
             }
 
 
