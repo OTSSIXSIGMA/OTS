@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using OnlineTrainingBL;
 using System.Text.RegularExpressions;
 using System.Collections;
+
 public partial class Review : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -42,7 +43,7 @@ public partial class Review : System.Web.UI.Page
             LblResult.Text = result;
         }
 
-        LblResult.Text = LblResult.Text+"<br/> Accuarcy = " + Accuracy + "%";
+        LblResult.Text = LblResult.Text+"<br/> Accuarcy = " + Math.Round( Accuracy ,2)+ "%";
 
 
     }

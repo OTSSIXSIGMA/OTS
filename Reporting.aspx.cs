@@ -42,7 +42,7 @@ public partial class Reporting : System.Web.UI.Page
                     }
                 }
 
-                Report tmpReport = new Report(question.DisplayID.ToString(), OptionChosen, OptionCorrect, (OptionChosen == OptionCorrect) ? "Correct" : "Wrong", ((double)numberCorrect / QuestionCount) * 100);
+                Report tmpReport = new Report(question.DisplayID.ToString(), OptionChosen, OptionCorrect, (OptionChosen == OptionCorrect) ? "Correct" : "Wrong", Math.Round(((double)numberCorrect / QuestionCount) * 100, 2));
                 report.Add(tmpReport);
             }
         }
