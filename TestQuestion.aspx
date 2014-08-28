@@ -12,7 +12,20 @@
             background-image:url('Resources/images/loginbackground.png');
             background-repeat:no-repeat;
             background-attachment:fixed;
+            background-color:#F9FAFF;
             }
+         #footer {
+    position: absolute;
+    top: 40%;
+    left: 42%;
+    margin-top: 500px;
+    margin-left: -30px;
+    font-size : 12px;
+    font-family : Calibri;
+    color :  #000000;
+ 
+    
+}
 
 #divCenter {
     position: absolute;
@@ -85,5 +98,8 @@ p.small {line-height:150%;}
 
     </div>
     </form>
+     <div id="footer" class="footer" style="vertical-align:bottom">
+         (Source) American Society for Quality
+         </div>
 </body>
 </html>

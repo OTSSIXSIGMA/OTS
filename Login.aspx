@@ -8,27 +8,10 @@
          <title>Login Page</title>
          
          <style type="text/css">
-            body {
-            background-image:url('Resources/images/loginbackground.png');
-            background-repeat:no-repeat;
-            background-attachment:fixed;
-            background-size : cover;
-            }
-            
-            body.source
-            {
-            	float:right;
-            	margin: 0px 0px 0px 0px;
-            	padding-top: 0px;
-            	text-align: right; 
-            	clear: both;
-            	color: #036;
-            	top: 0;
-            	left: 0;
-            	position: relative;
-            	display: inline-block;
-            }
-
+             body 
+             {
+                 background-color:#F9FAFF;
+             }
             #divCenter 
             {
             position: absolute;
@@ -47,16 +30,25 @@
             border-collapse:separate;
             border-spacing:2 5px;
             }
+
+            #footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
+}
          </style>
       </head>
-      <body>
-         <form id="form1" runat="server">
+      <body >
+         <form id="form1" runat="server" style="height:199px;width:1358px;margin:0 auto">
+             <div id="banner">
+                 <img src="Resources/images/loginbackground.png" alt="Welcome to Six Sigma Online Training System"/>
+             </div>
             <!-- <img src="Resources/images/logo.png" alt="Welcome to Six Sigma Online Training System" align="center" width="1335" height="125">-->
             <div id="divCenter">
                <table border="0" width="100%" cellspacing="1" height="100%" id="table1">
-               <tr>
-               <img border="0" src="Resources/images/loginbackground.png" width="144" height="183">
-               </tr>
+            
                   <tr>
                      <td align="center" >
                         <table border="0" width="500" id="table2">
@@ -114,10 +106,9 @@
                   </tr>
                </table>
             </div>
+        
          </form>
-         <div class="source">
-         (Source) American Society for Quality
-         </div>
+        
 
       </body>
    </html>

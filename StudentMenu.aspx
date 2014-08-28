@@ -10,6 +10,8 @@
             background-image:url('Resources/images/loginbackground.png');
             background-repeat:no-repeat;
             background-attachment:fixed;
+            background-color:#F9FAFF;
+
             }
 #divCenter {
 	position: absolute;

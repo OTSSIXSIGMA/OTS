@@ -11,6 +11,7 @@
             background-image:url('Resources/images/loginbackground.png');
             background-repeat:no-repeat;
             background-attachment:fixed;
+            background-color:#F9FAFF;
             }
             #logout{
              top: 35%;
@@ -46,12 +47,25 @@
             font-family : Calibri;
             color :  #0000CD;
             }
+            #heading 
+            {
+            position: absolute;
+            align-content:center;
+            top: 40%;
+            left: 30%;
+            margin-top: -50px;
+            margin-left: -25px;
+            font-size : 16px;
+            font-family : Calibri;
+            color :  #0000CD;
+            }
 </style>
 <body>
    <form id="form1" runat="server">
         <p id="logout"><asp:Button ID="btnSignout" runat="server" Text="Signout" BackColor="WhiteSmoke" OnClick="btnSignout_Click" style="height:50px; width:70px;color:#6971f8;font-weight:bold"/></p> 
-        <p id="p"> Welcome! Please select a Test to proceed...</p>
+
   <table>
+      <p id="heading">Welcome! Please select a Test to proceed...</p>
       <td>
       </td>
   <td>
