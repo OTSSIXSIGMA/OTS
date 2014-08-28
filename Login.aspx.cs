@@ -44,7 +44,7 @@ public partial class Login : System.Web.UI.Page
         if (reader.FieldCount != 0)
         {
             FormsAuthentication.RedirectFromLoginPage
-                      (UserEmail.Text, Persist.Checked);
+                      (UserEmail.Text, false);
             while (reader.Read())
             {
                 if(((IDataReader)reader)["usr_ID"] != null)
