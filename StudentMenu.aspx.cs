@@ -240,6 +240,7 @@ public partial class Menu : System.Web.UI.Page
             TestData.Add(tmpQuestion);
             tempHeader = "<h1><span style=" + "color: #0055FF; font-size: 16px;" + ">END WORDS</span></h1><br/>";
             tmpQuestion = new Question(12346,reader[1].ToString());
+            tmpQuestion.Value = tempHeader + tmpQuestion.Value;
             TestData.Add(tmpQuestion);
         }
         reader.Close();

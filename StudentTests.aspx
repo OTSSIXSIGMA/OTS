@@ -14,7 +14,7 @@
             background-color:#F9FAFF;
             }
             #logout{
-             top: 35%;
+             top: 42%;
             left: 50%;
             margin-top: 160px;
             margin-left: 1200px;

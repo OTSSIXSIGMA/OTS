@@ -57,7 +57,7 @@ public partial class Reporting : System.Web.UI.Page
 
     protected void btnReturn_Click(object sender, EventArgs e)
     {
-        Response.Redirect("StudentMenu.aspx?TestID=" + ((List<Question>)(Session["Questions"])).ElementAt(0).TestID.ToString());
+        Response.Redirect("StudentTests.aspx);
     }
 }
 
