@@ -37,7 +37,7 @@
                <table border="0" width="100%" cellspacing="1" height="100%" id="table1">
                   <tr>
                      <td align="center" >
-                        <table border="0" width="400" id="table2">
+                        <table border="0" width="500" id="table2">
                            <tr>
                               <td width="211">
                                  <img border="0" src="Resources/images/studenttakingexam.jpg" width="144" height="183">
@@ -76,12 +76,7 @@
                                                       ErrorMessage="Cannot be EMPTY." runat="server" />
                                                 </td>
                                              </tr>
-                                             <tr>
-                                                 <td align="left">
-                                                  Remember me?
-                                                   <asp:CheckBox ID="Persist" runat="server" />
-                                                     </td>
-                                             </tr>
+                                             
                                           </table>
                                           <asp:Button ID="Submit1" OnClick="Logon_Click" Text="Log In" BackColor="#C7D7E6" runat="server" />
                                           <p>
