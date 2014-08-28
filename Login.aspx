@@ -12,6 +12,7 @@
             background-image:url('Resources/images/loginbackground.png');
             background-repeat:no-repeat;
             background-attachment:fixed;
+            background-size : cover;
             }
             
             body.source
