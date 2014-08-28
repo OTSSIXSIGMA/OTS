@@ -195,9 +195,16 @@ public partial class TestQuestion : System.Web.UI.Page
         }
         else
         {
-            index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(((Question)Session["Question"]).ID));
-            Session["Question"] = ((List<Question>)Session["Questions"]).ElementAt(index + 1);
-            Response.Redirect("TestQuestion.aspx");
+            if (Session["SessionID"].ToString().Contains("CLOSED"))
+            {
+                Response.Redirect("Reporting.aspx");
+            }
+            else
+            {
+                index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(((Question)Session["Question"]).ID));
+                Session["Question"] = ((List<Question>)Session["Questions"]).ElementAt(index + 1);
+                Response.Redirect("TestQuestion.aspx");
+            }
         }
 
     }
