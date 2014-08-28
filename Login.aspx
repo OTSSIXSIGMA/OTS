@@ -3,10 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"/>
    <html>
       <head id="Head1" runat="server">
+      <link rel="shortcut icon" href="http://www.illinois.gov/dceo/Style%20Library/favicon.ico">
+
          <title>Login Page</title>
+         
          <style type="text/css">
             body {
-            background-image:url('Resources/images/loginbackground.png');
+         
             background-repeat:no-repeat;
             background-attachment:fixed;
             }
@@ -35,6 +38,9 @@
             <!-- <img src="Resources/images/logo.png" alt="Welcome to Six Sigma Online Training System" align="center" width="1335" height="125">-->
             <div id="divCenter">
                <table border="0" width="100%" cellspacing="1" height="100%" id="table1">
+               <tr>
+               <img border="0" src="Resources/images/loginbackground.png" width="144" height="183">
+               </tr>
                   <tr>
                      <td align="center" >
                         <table border="0" width="500" id="table2">
