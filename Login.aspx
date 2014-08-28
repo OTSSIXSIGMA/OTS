@@ -9,10 +9,25 @@
          
          <style type="text/css">
             body {
-         
+            background-image:url('Resources/images/loginbackground.png');
             background-repeat:no-repeat;
             background-attachment:fixed;
             }
+            
+            body.source
+            {
+            	float:right;
+            	margin: 0px 0px 0px 0px;
+            	padding-top: 0px;
+            	text-align: right; 
+            	clear: both;
+            	color: #036;
+            	top: 0;
+            	left: 0;
+            	position: relative;
+            	display: inline-block;
+            }
+
             #divCenter 
             {
             position: absolute;
