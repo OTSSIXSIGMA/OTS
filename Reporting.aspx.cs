@@ -57,7 +57,7 @@ public partial class Reporting : System.Web.UI.Page
 
     protected void btnReturn_Click(object sender, EventArgs e)
     {
-        Response.Redirect("StudentTests.aspx);
+        Response.Redirect("StudentTests.aspx");
     }
 }
 
