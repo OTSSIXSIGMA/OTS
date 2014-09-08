@@ -10,6 +10,10 @@ using System.Collections;
 
 public partial class Review : System.Web.UI.Page
 {
+    int index = 0;
+    int QuestionID;
+    Question question;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         List<String> OptionsOrder = new List<String>(((Question)Session["Question"]).SelectedList.Split(','));
@@ -50,5 +54,25 @@ public partial class Review : System.Web.UI.Page
     protected void btnContinue_Click(object sender, EventArgs e)
     {
         Response.Redirect("TestQuestion.aspx");
+    }
+    protected void btnPrevious_Click(object sender, EventArgs e)
+    {
+        int index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(((Question)Session["Question"]).ID));
+        if (index >= 1)
+        {
+            QuestionID = ((List<Question>)Session["Questions"]).ElementAt(index - 1).ID;
+            question = ((List<Question>)(Session["Questions"])).ElementAt(((List<Question>)(Session["Questions"])).FindIndex(q => q.ID == QuestionID));
+            Session["Question"] = question;
+        }
+        else
+        {
+            Session["Question"] = null;
+        }
+
+        Response.Redirect("TestQuestion.aspx");
+    }
+    protected void btnMenu_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("StudentMenu.aspx?TestID=" + ((List<Question>)(Session["Questions"])).Find(x => x.ID > 0).TestID.ToString());
     }
 }

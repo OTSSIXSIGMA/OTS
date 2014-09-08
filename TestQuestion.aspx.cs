@@ -137,12 +137,15 @@ public partial class TestQuestion : System.Web.UI.Page
                     rblOptions.SelectedIndex = rblOptions.Items.IndexOf(rblOptions.Items.FindByValue(question.OptionList.Find(q => q.ID == Convert.ToInt16(OptionsOrder.ElementAt(OptionsOrder.Count - 1))).Value));
                 }
 
+                btnSubmit.Text = "Submit";
+                btnMenu.Visible = false;
+
             }
 
             index = ((List<Question>)Session["Questions"]).FindIndex(q => q.ID == Convert.ToInt16(question.ID));
             if (index == ((List<Question>)Session["Questions"]).Count - 1)
             { btnSubmit.Text = "Finish"; }
-            else if (index != 0)
+            else if (index != 0 /*&& question.ID < 0*/)
             { btnPrevious.Visible = true; }
 
 

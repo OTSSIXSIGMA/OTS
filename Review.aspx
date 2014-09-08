@@ -37,12 +37,18 @@
     <form id="form1" runat="server">
     <div id="divCenter">
         <asp:Label ID="LblResult" runat="server" Text=""></asp:Label>
+        <br />
         <div>
-        <asp:Button ID="btnContinue" runat="server" Text="Continue" OnClick="btnContinue_Click" />
+            <br />
+        <a href="Reporting.aspx" rel="shadowbox;height=500;width=500"> Click here to Check Status </a>
         </div>
+        <br />
         <div>
-        <a href="Reporting.aspx" rel="shadowbox;height=500;width=500"> Check Status </a>
+        <asp:Button ID="btnPrevious" runat="server" Text="Previous" OnClick="btnPrevious_Click" BackColor="#C7D7E6" />
+        <asp:Button ID="btnContinue" runat="server" Text="Next" OnClick="btnContinue_Click" BackColor="#C7D7E6" />
+        <asp:Button ID="btnMenu" runat="server" Text="Return to Main Menu" OnClick="btnMenu_Click" BackColor="#C7D7E6" />
         </div>
+        
         </div>
     </form>
 </body>

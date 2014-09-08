@@ -28,22 +28,28 @@
             table
             {
             border-collapse:separate;
-            border-spacing:2 5px;
+            border-spacing:5px;
             }
 
-            #footer {
-    clear: both;
-    position: relative;
-    z-index: 10;
-    height: 3em;
-    margin-top: -3em;
-}
+            #footer 
+            {
+                clear: both;
+                position: relative;
+                z-index: 10;
+                height: 3em;
+                margin-top: -3em;
+            }
+             logInButton 
+             {
+                 color:blue;
+             }
+          
          </style>
       </head>
-      <body >
-         <form id="form1" runat="server" style="height:199px;width:1358px;margin:0 auto">
+      <body>
+         <form id="form1" runat="server" style="height:auto;width:1500px;margin:0 auto">
              <div id="banner">
-                 <img src="Resources/images/loginbackground.png" alt="Welcome to Six Sigma Online Training System"/>
+               <img src="Resources/images/loginbackground.png" width:"1300px" alt="Welcome to Six Sigma Online Training System"/>
              </div>
             <!-- <img src="Resources/images/logo.png" alt="Welcome to Six Sigma Online Training System" align="center" width="1335" height="125">-->
             <div id="divCenter">
@@ -92,7 +98,7 @@
                                              </tr>
                                              
                                           </table>
-                                          <asp:Button ID="Submit1" OnClick="Logon_Click" Text="Log In" BackColor="#C7D7E6" runat="server" />
+                                          <asp:Button ID="logInButton" OnClick="Logon_Click" Text="Sign In" BackColor="#C7D7E6" height="30px" runat="server" style="font-weight:bold;" />
                                           <p>
                                              <asp:Label ID="Msg" ForeColor="red" runat="server" />
                                           </p>

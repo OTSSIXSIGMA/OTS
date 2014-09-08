@@ -90,9 +90,9 @@ p.small {line-height:150%;}
         </ContentTemplate>
         </asp:UpdatePanel>
             </p>
-        <asp:Button ID ="btnPrevious" runat ="server" Text="Previous" OnClick="btnPrevious_Click"/>
-        <asp:Button ID="btnSubmit" runat="server" Text="Next" OnClick="btnSubmit_Click" ValidationGroup="options"  CausesValidation="true" />
-        <asp:Button ID="btnMenu" runat="server" Text="Return to main menu" OnClick="btnMenu_Click" />
+        <asp:Button ID ="btnPrevious" runat ="server" Text="Previous" OnClick="btnPrevious_Click" BackColor="#C7D7E6"/>
+        <asp:Button ID="btnSubmit" runat="server" Text="Next" OnClick="btnSubmit_Click" ValidationGroup="options"  CausesValidation="true" BackColor="#C7D7E6"/>
+        <asp:Button ID="btnMenu" runat="server" Text="Return to Main Menu" OnClick="btnMenu_Click" BackColor="#C7D7E6"/>
         <br />
         <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
 

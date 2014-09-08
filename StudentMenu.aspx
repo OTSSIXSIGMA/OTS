@@ -16,9 +16,9 @@
 #divCenter {
 	position: absolute;
     top: 50%;
-    left: 50%;
+    left: 47%;
     margin-top: -50px;
-    margin-left: -50px;
+    margin-left: -40px;
     width: 100px;
     height: 100px;
 }
@@ -28,10 +28,10 @@
 <body>
     <form id="form1" runat="server">
     <div id="divCenter">
-    <asp:Button ID="btnStartTest" runat="server" Text="Start Test" OnClick="btnStartTest_Click"></asp:Button>
-        <asp:Button ID="btnContinue" runat="server" Text="Continue Test" OnClick="btnContinue_Click" Visible="false" />
-        <asp:Button ID="btnReturn" runat ="server" Text="Return" OnClick="btnReturn_Click" />
-        <asp:Button ID="btnSignout" runat="server" Text="Signout" OnClick="btnSignout_Click"/>
+<asp:Button ID="btnStartTest" runat="server" Text="Start Test" BackColor="#C7D7E6" OnClick="btnStartTest_Click" style="height:50px; width:200px;color:#08088A;font-weight:bold;font-family:Calibri;font-size:18px;"/>
+<asp:Button ID="btnContinue" runat="server" Text="Resume Test" BackColor="#C7D7E6" OnClick="btnContinue_Click" style="height:50px; width:200px;color:#08088A;font-weight:bold;font-family:Calibri;font-size:18px;"/>
+<asp:Button ID="btnReturn" runat="server" Text="Return to the Test Menu" BackColor="#C7D7E6" OnClick="btnReturn_Click" style="height:50px; width:200px;color:#08088A;font-weight:bold;font-family:Calibri;font-size:18px;"/>
+<asp:Button ID="btnSignout" runat="server" Text="SignOut" BackColor="#C7D7E6" OnClick="btnSignout_Click" style="height:50px; width:200px;color:#08088A;font-weight:bold;font-family:Calibri;font-size:18px;"/>
     </div>
     </form>
 </body>
