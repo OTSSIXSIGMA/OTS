@@ -14,20 +14,20 @@
             background-color:#F9FAFF;
             }
             #logout{
-             top: 50%;
+             top: 42%;
             left: 50%;
-            margin-top: 200px;
+            margin-top: 160px;
             margin-left: 1200px;
             font-size : 18px;
             font-family : Calibri;
             align-content:center;
             font-weight: bold;
-          
+            color:#193168;
             }
             #p{
             top: 35%;
             left: 30%;
-            margin-top: 180px;
+            margin-top: 150px;
             margin-left: 375px;
             font-size : 18px;
             font-family : Calibri;
@@ -60,16 +60,16 @@
             color :  #0000CD;
             }
 </style>
-<body style="width:auto">
-   <form id="form1" runat="server" >
-        <p id="logout"><asp:Button ID="btnSignout" runat="server" Text="Sign Out" BackColor="#C7D7E6" OnClick="btnSignout_Click" style="height:50px; width:70px;font-weight:bold;font-family:Calibri;font-size:16px;" /></p> 
+<body>
+   <form id="form1" runat="server">
+        <p id="logout"><asp:Button ID="btnSignout" runat="server" Text="Signout" BackColor="WhiteSmoke" OnClick="btnSignout_Click" style="height:50px; width:70px;color:#6971f8;font-weight:bold"/></p> 
 
   <table>
-      <p id="heading">Welcome! Please select a Test to proceed...!</p>
+      <p id="heading">Welcome! Please select a Test to proceed...</p>
       <td>
       </td>
   <td>
-    <div id="divCenter" style="height:400px; width:auto; border:solid; border-color:#21448B; overflow:scroll">
+    <div id="divCenter" style="height:400px; width:400px; border:solid; border-color:#21448B; overflow:scroll">
         <asp:GridView ID="grdTests" runat="server" DataKeyNames="tst_ID" AutoGenerateColumns="false" OnRowEditing="grdTests_RowEditing" BorderWidth="1px" BackColor="#E2EBF2"
             CellPadding="8" CellSpacing="3" BorderStyle="Double" BorderColor="#301793" SkinID="Professional" Font-Name="Calibri"
             Font-Size="14pt"
