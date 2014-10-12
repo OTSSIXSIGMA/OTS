@@ -36,7 +36,7 @@ public partial class Review : System.Web.UI.Page
         double Accuracy = ((double)numberCorrect / (((List<Question>)Session["Questions"]).FindAll(x => x.SelectedList != null).Count)) * 100;
         if (OptionChosen == OptionCorrect)
         {
-            LblResult.Text = "Correct Answer";
+            LblResult.Text = "<p style="color:red">Correct Answer</p>";
         }
         else
         {
