@@ -7,16 +7,11 @@
     <title>Student Test Menu</title>
 </head>
 <style type="text/css">
-            body {
-            background-image:url('Resources/images/loginbackground.png');
-            background-repeat:no-repeat;
-            background-attachment:fixed;
-            background-color:#F9FAFF;
-            }
+           
             #logout{
              top: 50%;
             left: 50%;
-            margin-top: 200px;
+            margin-top: 10px;
             margin-left: 1200px;
             font-size : 18px;
             font-family : Calibri;
@@ -62,6 +57,9 @@
 </style>
 <body style="width:auto">
    <form id="form1" runat="server" >
+   <div id="banner">
+               <img src="Resources/images/loginbackground.png"  style="width:100%;height:90%;align-items:center" alt="Welcome to Six Sigma Online Training System"/>
+             </div>
         <p id="logout"><asp:Button ID="btnSignout" runat="server" Text="Sign Out" BackColor="#C7D7E6" OnClick="btnSignout_Click" style="height:50px; width:70px;font-weight:bold;font-family:Calibri;font-size:16px;" /></p> 
 
   <table>
