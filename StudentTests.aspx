@@ -67,13 +67,13 @@
       <td>
       </td>
   <td>
-    <div id="divCenter" style="height:400px; width:auto; border:solid; border-color:#21448B; overflow:scroll">
+    <div id="divCenter" style="height:350px; width:auto; border:solid; border-color:#21448B; overflow:scroll">
         <asp:GridView ID="grdTests" runat="server" DataKeyNames="tst_ID" AutoGenerateColumns="false" OnRowEditing="grdTests_RowEditing" BorderWidth="1px" BackColor="#E2EBF2"
             CellPadding="8" CellSpacing="3" BorderStyle="Double" BorderColor="#301793" SkinID="Professional" Font-Name="Calibri"
             Font-Size="14pt"
             HeaderStyle-BackColor="#444444"
             HeaderStyle-ForeColor="White"
-            AlternatingRowStyle-BackColor="#dddddd" Width="400" Height="400">
+            AlternatingRowStyle-BackColor="#dddddd" Width="400" Height="350">
             <FooterStyle ForeColor="#8C4510"
                 BackColor="#F7DFB5"></FooterStyle>
             <PagerStyle ForeColor="#8C4510"
