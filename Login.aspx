@@ -44,15 +44,22 @@
                  color:blue;
              }
           
+             .auto-style1 {
+                 width: 498px;
+             }
+          
          </style>
       </head>
       <body>
          <form id="form1" runat="server" style="height:auto;width:1500px;margin:0 auto">
+             <asp:ScriptManager runat="server" /></asp:scriptmanager>
              <div id="banner">
-               <img src="Resources/images/loginbackground.png" width:"1300px" alt="Welcome to Six Sigma Online Training System"/>
+               <img src="Resources/images/loginbackground.png"  style="width:100%;height:90%;align-items:center" alt="Welcome to Six Sigma Online Training System"/>
              </div>
             <!-- <img src="Resources/images/logo.png" alt="Welcome to Six Sigma Online Training System" align="center" width="1335" height="125">-->
-            <div id="divCenter">
+           <asp:UpdatePanel ID="uppLgin" runat="server" UpdateMode="Always">
+               <ContentTemplate>   
+              <div id="divCenter">
                <table border="0" width="100%" cellspacing="1" height="100%" id="table1">
             
                   <tr>
@@ -62,11 +69,11 @@
                               <td width="211">
                                  <img border="0" src="Resources/images/studenttakingexam.jpg" width="144" height="183">
                               </td>
-                              <td width="211">
+                              <td width="400">
                                  <table border="0" width="100%" id="table3" style="border: 1px solid #251272">
                                     <tr>
-                                       <td>
-                                          <table border="0" width="100%" id="table4" cellpadding="2">
+                                       <td class="auto-style1">
+                                          <table border="0" width="152%" id="table4" cellpadding="2">
                                              <tr>
                                                 <td align="left" valign="bottom">
                                                    Username
@@ -74,7 +81,7 @@
                                                 <td align="left" valign="bottom">
                                                    <asp:TextBox ID="UserEmail" runat="server" type="text" />
                                                 </td>
-                                                <td>
+                                                <td align="left" valign="bottom">
                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
                                                       ControlToValidate="UserEmail"
                                                       Display="Dynamic" 
@@ -112,7 +119,8 @@
                   </tr>
                </table>
             </div>
-        
+                 </ContentTemplate>
+        </asp:UpdatePanel>
          </form>
         
 
