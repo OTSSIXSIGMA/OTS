@@ -56,7 +56,7 @@
                 </Columns>
         </asp:GridView>
         <asp:Button ID="btnReturn" runat="server" Text="Return to main menu" OnClick="btnReturn_Click" />
-        <asp:Button ID="btnPrint" runat="server" Text="Print" OnClientClick="javascript:PrintPage();" />
+        <asp:Button ID="btnPrint" runat="server" Text="Print" BackColor="#C7D7E6" OnClientClick="javascript:PrintPage();" />
         
     </div>
     </form>
