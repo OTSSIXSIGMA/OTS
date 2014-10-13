@@ -34,7 +34,7 @@
              <asp:GridView ID="gdvReport" runat="server" AutoGenerateColumns="false" BorderWidth="1px" BackColor="#E2EBF2"
             CellPadding="5" CellSpacing="2" BorderStyle="Double" BorderColor="#301793" SkinID="Professional" Font-Name="Calibri"
             Font-Size="14pt"
-            HeaderStyle-BackColor="#3366CC"
+            HeaderStyle-BackColor="#6666FF"
             HeaderStyle-ForeColor="White"
             AlternatingRowStyle-BackColor="#dddddd" Width="120" Height="100">
             <Columns>   
