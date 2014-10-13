@@ -36,7 +36,7 @@
             Font-Size="14pt"
             HeaderStyle-BackColor="#444444"
             HeaderStyle-ForeColor="White"
-            AlternatingRowStyle-BackColor="#dddddd" Width="200" Height="200">
+            AlternatingRowStyle-BackColor="#dddddd" Width="150" Height="150">
             <Columns>   
                <asp:BoundField DataField="Question" HeaderText="Question" >
                <ItemStyle HorizontalAlign="Center" />
