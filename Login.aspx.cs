@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -41,12 +41,12 @@ public partial class Login : System.Web.UI.Page
         connection.Open();
 
         reader = cmd2.ExecuteReader();
-        if (reader.FieldCount != 0)
+        if(reader.HasRows)
         {
-            FormsAuthentication.RedirectFromLoginPage
-                      (UserEmail.Text, false);
-            while (reader.Read())
+            while (reader.Read() )
             {
+                FormsAuthentication.RedirectFromLoginPage
+                          (UserEmail.Text, false);
                 if(((IDataReader)reader)["usr_ID"] != null)
                 {
                     Session["UserID"] = Convert.ToInt16(((IDataReader)reader)["usr_ID"]);
@@ -59,11 +59,14 @@ public partial class Login : System.Web.UI.Page
                 {   
                     Response.Redirect("StudentTests.aspx");
                 }
+
+                
             }
         }
-        else
+   
+    else
         {
-            Msg.Text = "Invalid credentials. Please try again.";
+            Msg.Text = "Login Failed. Please verify and try again !";
         }
         reader.Close();
         connection.Close();
