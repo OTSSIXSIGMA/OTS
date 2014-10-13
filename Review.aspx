@@ -6,12 +6,7 @@
 <head runat="server">
     <title>Review</title>
     <style type="text/css">
-            body {
-            background-image:url('Resources/images/loginbackground.png');
-            background-repeat:no-repeat;
-            background-attachment:fixed;
-            background-color:#F9FAFF;
-            }
+            
     #divCenter {
     position: absolute;
     top: 45%;
@@ -35,6 +30,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+      <div id="banner">
+               <img src="Resources/images/loginbackground.png"  style="width:100%;height:90%;align-items:center" alt="Welcome to Six Sigma Online Training System"/>
+             </div>
     <div id="divCenter">
         <asp:Label ID="LblResult" runat="server" Text=""></asp:Label>
         <br />
