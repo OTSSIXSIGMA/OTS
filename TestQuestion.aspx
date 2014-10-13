@@ -8,12 +8,7 @@
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 
     <style type="text/css">
-        body {
-            background-image:url('Resources/images/loginbackground.png');
-            background-repeat:no-repeat;
-            background-attachment:fixed;
-            background-color:#F9FAFF;
-            }
+      
          #footer {
     position: absolute;
     top: 40%;
@@ -61,6 +56,9 @@ p.small {line-height:150%;}
 </head>
 <body>
     <form id="form1" runat="server">
+    <div id="banner">
+               <img src="Resources/images/loginbackground.png"  style="width:100%;height:90%;align-items:center" alt="Welcome to Six Sigma Online Training System"/>
+             </div>
         <asp:scriptmanager ID="Scriptmanager1" runat="server"></asp:scriptmanager>
     <div id="divCenter">
 
