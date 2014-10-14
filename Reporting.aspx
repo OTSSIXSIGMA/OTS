@@ -66,8 +66,8 @@
                </asp:BoundField>
                 </Columns>
         </asp:GridView>
-        <asp:Button ID="btnReturn" runat="server" Text="Return to main menu" BackColor="#C7D7E6" OnClick="btnReturn_Click" />
-        <asp:Button ID="btnPrint" runat="server" Text="Print" BackColor="#C7D7E6" OnClientClick="javascript:PrintPage();" />
+        <asp:Button ID="btnReturn" runat="server" Text="Return to main menu" BackColor="#C7D7E6" OnClick="btnReturn_Click" style="height:30px; width:150px;color:#08088A;font-weight:bold;font-family:Calibri;font-size:16px;" />
+        <asp:Button ID="btnPrint" runat="server" Text="Print" BackColor="#C7D7E6" OnClientClick="javascript:PrintPage();" style="height:30px; width:150px;color:#08088A;font-weight:bold;font-family:Calibri;font-size:16px;" />
         
     </div>
     </form>
