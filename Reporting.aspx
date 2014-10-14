@@ -8,7 +8,7 @@
       <style type="text/css">
     #divCenter {
     position: absolute;
-    top: 20%;
+    top: 24%;
     left: 50%;
     margin-top: -100px;
     margin-left: -150px;
