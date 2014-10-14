@@ -60,6 +60,12 @@ public partial class Reporting : System.Web.UI.Page
         Response.Redirect("StudentTests.aspx");
     }
     
+    protected void btnSignout_Click(object sender, EventArgs e)
+    {
+    Session.Abandon();
+    FormsAuthentication.SignOut();
+    Response.Redirect("Login.aspx");
+    }
 
 }
 
