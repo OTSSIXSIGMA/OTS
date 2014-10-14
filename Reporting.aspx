@@ -39,7 +39,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <p id="logout"><asp:Button ID="btnSignout" runat="server" Text="Sign Out" BackColor="#C7D7E6" OnClick="btnSignout_Click" style="height:50px; width:70px;font-weight:bold;font-family:Calibri;font-size:16px;" /></p>
+    
     <div id="divCenter">
         <asp:Label ID="lblReport" runat="server" ></asp:Label>
              <asp:GridView ID="gdvReport" runat="server" AutoGenerateColumns="false" BorderWidth="1px" BackColor="#E2EBF2"
