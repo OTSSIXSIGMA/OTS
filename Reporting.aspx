@@ -10,7 +10,7 @@
     position: absolute;
     top: 45%;
     left: 30%;
-    margin-top: -75px;
+    margin-top: -100px;
     margin-left: -150px;
     width: 100px;
     height: 100px;
