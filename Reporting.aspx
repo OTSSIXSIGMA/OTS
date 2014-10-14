@@ -28,6 +28,18 @@
             align-content:center;
             font-weight: bold;
             }
+    #heading 
+            {
+            position: absolute;
+            align-content:center;
+            top: 20%;
+            left: 30%;
+            margin-top: -50px;
+            margin-left: -25px;
+            font-size : 16px;
+            font-family : Calibri;
+            color :  #0000CD;
+            }
   
     </style>
      <script type="text/javascript">
@@ -39,7 +51,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    
+    <p id="heading">Test completed. Below are the results : </p>
     <div id="divCenter">
         <asp:Label ID="lblReport" runat="server" ></asp:Label>
              <asp:GridView ID="gdvReport" runat="server" AutoGenerateColumns="false" BorderWidth="1px" BackColor="#E2EBF2"
